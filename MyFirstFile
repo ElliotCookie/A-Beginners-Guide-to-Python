@@ -1,0 +1,7 @@
+print("Hello, World!")
+print("This is a new test file.")
+for i in range(5, 11):
+    print("New line", i)
+print("This is the end of the file.")
+name = input()
+print("You entered:", name)
