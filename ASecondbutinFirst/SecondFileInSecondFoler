@@ -5,3 +5,4 @@ for i in range(1, 5):
     print("This is line", i)
 print("Aimee is sleeping on bed")
 #deleted a line but added one here and one on L2
+#okay so this didn't take in my comments, because I didn't stage changes I think
