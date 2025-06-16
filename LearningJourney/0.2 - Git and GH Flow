@@ -1,0 +1,56 @@
+Get the plugin Git Graph, there is a word that says "Git Graph" at the bottom. Click on it, then click on the stuff to expand details and see what you did
+You can even click into the things on the right and it shows you that code
+
+https://www.youtube.com/watch?v=gW6dFpTMk8s
+
+Levels of branches
+___________GIT_____________
+
+Hotfix - emergency fixes!
+Main - (or master), production ready code, official releases
+Release - pre-release staging area, final testing happens here
+Develop - inegration branch where features are merged
+Feature - individual branches for new features
+
+
+Start in main, makes sense
+Push down to develop branch, this level serves to collect features
+
+Different dev teams on different features, so they pull a copy of the code from develop
+Make feature and then push it back to the develop main branch
+The question is, do other feature teams then pull this completed feature or not?
+
+Once main develop branch has enough features, this is reviewed, pushed up to release layer
+Release engineers review this, it'll be called 1.0 or something
+If it's good then it's pushed up to main and that's sold or whatever
+The same code is then pulled down by the develop team, who start over 
+(perhaps some changes were made by release reviewing engineer)
+
+If it's then found that there is an error (!!), hot fix jumps into action
+They get to bypass all that faff, they do the fix and issue down to main
+This will be rev 1.1, and sold to customers
+It is also issued down to development team as that is the newest official version
+The question is, do they then have to just adopt this and start over, is it merged into what they have?
+Hypothetically all the work is being done on a feature branch anyway
+
+Answers to questions:
+1. There can be conflict - tough! Regularly sync with develop, talk and break features down
+All feature teams should be pulling the development branch
+2. Hotfix is merged into main and develop. Feature team pulls the devlop branch.
+They can adjust the hotfix (so they don't write off progress) and then push this back up to the develop branch
+
+THIS IS QUITE REVIEW AND PUSH/PULL INTENSIVE!!
+
+
+
+Github 
+Works generally because features are isolated
+Needs a mature team and good engineers
+Git falls down because if eg 1 of 5 features has a bug then the whole release is shot
+By doing small and often you can get around this (if bug just roll back to prev ver)
+
+Basically you go
+Main -> feature -> (pre production maybe) -> main (!!)
+
+
+
