@@ -3,4 +3,61 @@ It's because I didn't put in a message to the commit, and it was taking ages bec
 I'm going to commit this and then create a new branch to test out what I've learned in the feedback cycle
 
 
+---- Notes now new branch is created ----
 
+I clicked on commit, but I hadn't staged my changes so I got a pop up asking if I want to do a combo of staging changes and committing at once
+I clicked yes (BUT THIS IS BAD PRACTICE, ALWAYS STAGE, THEN COMMIT)
+I then made a new branch by 'crtl + shift + p' to command, and then "Git: Create new branch"
+Similar to most advanced software, it's not clear if this menu I get from typing "Git:" has the same effect as to when I click on the branch name in the bottom left and that gives me options
+Are the two things the same?    ***
+Obviously "Git:" gives you the suite of options, but clicking can only display a limited amount
+I'm conscious that one is GIT itself and the other might relate to both git and GH.
+
+Hahahaha so I looked it up
+Clicking the branch takes you to the "Branch manager" 
+A moment of respect for all the cringey IT jokes that must have been made out of that
+"GIT" in the command bar isn't restricted to 'branch managing' so shows more stuff
+But ultimately they interact with the same cogs behind the scene 
+
+***    ANSWER TO Q - TLDR - Yes, they are the same!
+
+For my next (elegant) trick I am going to commit this
+Don't forget a comment this time!
+This will commit on the 0.3-Git-Process branch
+Then I'll change to the main branch
+- A fun fact is that 'origin' is the default name for GH, but it can be changed
+On the main, click the 3 dots on the repository folder -> branch -> merge
+(will resume this paragraph after a side tangent)
+
+I looked up push, pull, stash and tags
+Push - Uploads current branch to GH, be it main or 0.3 or whatever. Push shouldn't overwrite, it will flag an error and tell you to pull first. (UNLESS 'FORCE' IS USED)
+Pull - Pulls any changes from GH and merges them into current branch. Can't complete if curent branch isn't on GH (it's like a branch on the floor next to a tree, not attached)
+
+Stash 
+Hides stuff (seems useful ;))
+So you can do work on a branch, not commit (because you'd just have to uncommit later, and I can see why this would be an issue in a dev team)
+Basically stash a branch, go and do an emergency fix on another branch, commit and upload that
+Come back and unstash branch, carry on working like a good programmer
+
+Tag
+This is a label attached to a specific commit
+I'm thinking perhaps a small feature is patched after a 1.0 release, so in that commit you might also tag it as 1.1
+Basically the 'why it matters', in addition to the 'what it is', that comments will address
+
+
+Proper terminology for "global" and that stuff
+Local repository/repo - On your computer
+Remote repo - On GH/GL, whatever (global, to the uneducated)
+The default remote is usually called the origin
+
+
+
+(resuming after side tangent)
+3 dots - > get to merge
+Then I have the option of inline view, to see all changes on 1 screen
+Or side by side or whatever
+The only changes will be all these green bars as I've added lines
+Actually, we can see they are showing as hashed blue, as I renamed an existing file
+So I'll have committed them, and merged, so in theroy it should then just be a case of publishing
+and this will be to the REMOTE (not global!) repo
+And mark the lesson done for the day
