@@ -1,9 +1,0 @@
-print("Hello, World!")
-print("This is a new test file.")
-for i in range(7, 18):
-    print("New line", i)
-name = input()
-print("You entered:", name)
-print("I've now added a second branch")
-print("3rd line in inline view")
-print("4th line in inline view")

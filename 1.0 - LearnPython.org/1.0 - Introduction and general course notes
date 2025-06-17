@@ -1,0 +1,30 @@
+Already starting the file in plain text - nice!
+
+I'm getting the next pack of my lessons from this website: https://www.learnpython.org/en/Welcome
+I'm going to go through them and achieve a certain amount each day. 
+
+New shortcut learned! Press CTRL + K, then M for languages to pop up. Then type Py to get python.
+F2 renames a file that you've clicked on.
+
+The style guide and what I'm assuming is a Python bible is here: https://peps.python.org/pep-0008/
+
+
+
+Lesson 1 is hello world - https://www.learnpython.org/en/Hello%2C_World%21____________________
+
+% is the "modulo operator", which obviously doesn't actually help explain what it means at all...
+a % b yields the remainder when a is divided by b. 
+7 % 3  # → 1  (because 7 = 2×3 + 1)
+10 % 2 # → 0  (because 10 is exactly divisible by 2)
+% is a bit smart and if you give it a decimal the answer will be, if you give it ints only then that shall be your answer
+Lets go back and have a play actually
+
+== is the equality comparison operator
+It will check if any two things match perfectly
+If you give a string and an int ""four" == 4" then it will throw a false
+Basically ensure your data type (array! or boolean or whatever is formatted, before you call it)
+
+An f string allows you to run python within a string (basically a pre-compile?)
+This allows for things like: print(f"The result of 14 % 5 is {14 % 5}")
+This is important, as in a string function you can't just mash and int on the end of a str
+

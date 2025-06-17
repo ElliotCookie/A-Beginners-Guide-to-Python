@@ -1,0 +1,18 @@
+Today I am going to...
+This is recognising as Python, to change it click bottom right and opt for plain text
+
+That's better
+Today I'd like to make a decent folder structure to move forward with
+I think I was there on git after spending the past few days on it
+It goes something like new branch, stage, commit, merge 
+Checks out with the notes I made in 0.2 and 0.3.
+
+I also want to rename a folder, is that just right-clicking?
+It doesn't work at high level. One fix idea is to rename it in file explorer.
+I'm wondering if this will mean I need to create a new remote repo as the one atm is called "My-frst-folder" on GH. 
+
+I'll try the 'hack' and see how I get on. Closing VS for this.
+So it worked! Well, in VS Code, I'm yet to see how it works with a GH upload.
+I'm getting the sense that it will actually make a new RemRepo. Will worry about this at the end of todays learning.
+Onwards to create 0.5 file.
+
