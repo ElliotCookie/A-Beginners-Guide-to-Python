@@ -1,0 +1,63 @@
+
+#Everything in Python is object-oriented, and what I'm told is this means everything is an object
+#I guess this saves the need to define an object and then assign a value to it
+
+myint = 7
+print(myint)
+myfloat = 7.0
+print(myfloat)
+myfloat = float(7)
+print(myfloat)
+
+#Strings need quotes or double quotes (not 2 lots of ' but the key ")
+mystring = 'hello'
+print(mystring)
+mystring = "hello"
+print(mystring)
+#Using apostrophes makes it hard to then use apostrophes in the code - "don't worry"
+
+one = 1
+two = 2
+three = one + two
+print(three)
+
+hello = "hello"
+world = "world"
+helloworld = hello + " " + world
+print(helloworld)
+
+#Yesterday we explored the use of using "+" but we decided that actually using an f string was better
+#This one is not great:
+#print("The result of 14 % 5 is " + str(14 % 5))
+#This is more efficient:
+print(f"The result of 14 % 5 is {14 % 5}")
+
+#You can also asign more than one thing at a time, simultaneously:a, b = 3, 4
+a, b = 3, 4
+print(a, b)
+
+""" 
+The target of this exercise is to create a string, an integer, and a floating point number.
+The string should be named mystring and should contain the word "hello".
+The floating point number should be named myfloat and should contain the number 10.0,
+and the integer should be named myint and should contain the number 20. """
+
+#interestingly, this code uses the % that we learned about 
+#% gives the leftovers, not sure what %s, f, or d is though
+
+# change this code
+mystring = "hello" #used " and not '
+myfloat = 10.0 #could have also used float(10) I think
+myint = 20
+
+# testing code
+if mystring == "hello":
+    print("String: %s" % mystring)
+if isinstance(myfloat, float) and myfloat == 10.0:
+    print("Float: %f" % myfloat)
+if isinstance(myint, int) and myint == 20:
+    print("Integer: %d" % myint)
+
+
+#pretty easy and quick one today, I liked defining multiple variables on one line
+#Stage, commit, upload is next (I think that's the sequence)
