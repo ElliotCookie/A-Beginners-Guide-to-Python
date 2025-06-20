@@ -1,0 +1,16 @@
+I wanted to do a side project and didn't want this to be tracked by all the handy
+git and GH tools
+
+For that there are two funcitons you need
+
+The first is to go into the terminal at the bottom and type:
+git checkout --detach
+
+This will then put you on a new random branch with no name
+When you want to log in, ensure your terminal in vs code says the correct thing,
+basically it needs to be going to the folder that has a (hidden) .git file in it already
+Git needs to know about the folder!
+You then type
+git checkout MainBranch
+
+and this puts you back into the branch
