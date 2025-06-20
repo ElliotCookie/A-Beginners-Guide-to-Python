@@ -14,3 +14,8 @@ You then type
 git checkout MainBranch
 
 and this puts you back into the branch
+
+
+Also a note
+When snycing, this pulls the repo and then pushes. 
+In a team situation, obviously the pull could have conflicts to resolve
