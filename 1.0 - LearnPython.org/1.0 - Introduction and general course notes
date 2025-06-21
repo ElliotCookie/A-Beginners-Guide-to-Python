@@ -30,3 +30,6 @@ An f string allows you to run python within a string (basically a pre-compile?)
 This allows for things like: print(f"The result of 14 % 5 is {14 % 5}")
 This is important, as in a string function you can't just mash and int on the end of a str
 
+Lesson 6
+Ahead of time, I've saved the file as a .py 
+This now should mean it stays as python and not flip to plaintext 
