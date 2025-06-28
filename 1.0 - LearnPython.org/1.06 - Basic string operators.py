@@ -41,6 +41,10 @@ print(astring.endswith("asdfasdfasdf"))
 afewwords = astring.split(" ") #turns it into a list!
 print(afewwords)
 
+#New stuff that's not in the course, solving 1.12
+#There is a string operator called "in"
+print("llo" in astring) #will return True 
+print("end of llo check, start of exercise results")
 
 """ EXERCISE """
 #starting at 01234567890123456789
