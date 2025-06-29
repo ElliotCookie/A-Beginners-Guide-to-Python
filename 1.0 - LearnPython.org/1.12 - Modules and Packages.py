@@ -72,6 +72,7 @@ so same system folder, your python folder, other libraries etc """
 #lets say on a USB or something a bit different
 """One thing that makes sense to mention here and not later,
 your .py modules need to have an (empty) __init__.py file in the folder
+This importantly changes all your modules into a package!
 Python can't  import your module(s) without this little file"""
 
 
