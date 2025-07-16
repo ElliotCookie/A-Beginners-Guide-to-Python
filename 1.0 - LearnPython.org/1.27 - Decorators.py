@@ -40,12 +40,21 @@ or type(object) might help."""
 
 
 def type_check(correct_type):
-    #put code here
-    def new_nested(arg):
-        if arg >< int:
-            raise (ValueError, "Bad type")
-        correct_type(arg)
-    return new_nested
+    # Factory function that takes the desired type as an argument
+    def decorator(fn):
+        # Decorator that wraps the original function `fn`
+        def wrapper(arg):
+            # Wrapper that checks the type of its single argument
+            if not isinstance(arg, correct_type):
+                # If the argument is not of the expected type, print an error
+                print("Bad type")
+            else:
+                # Otherwise, call the original function with the argument
+                return fn(arg)
+        # Return the wrapped version of the original function
+        return wrapper
+    # Return the decorator configured with the desired type
+    return decorator
            
 
 @type_check(int)
