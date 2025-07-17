@@ -27,5 +27,34 @@ from itertools import zip_longest # here we go!!
 zippingAgain = zip_longest(numbers, moreNumbers, fillvalue="-")
 print(list(zippingAgain))
 
+""" F I L T E R """
+# Map passes everything and that's great, filter first gets some boolean values
+# I'm assuming it uses these to decide what gets mapped. Syntax:
+# filter(function, iterable)
 
+# Only 1 iterable is required, so it goes without saying...
+# The function must only take one argument, which must return a boolean type
+
+pokemonAndMoves = {
+    "Dragonite":  {"Fly", "Outrage", "Extreme Speed"},
+    "Bulbasaur":  {"Tackle", "Absorb", "Solar Beam"}}
+
+priorityMoves = ["Quick Attack", "Extreme Speed"]
+
+def doesPokemonHavePriority(pokemon):
+    moves = pokemonAndMoves[pokemon] #square brackets!
+    return any(move in priorityMoves for move in moves)
+            
+priorityPokemon = filter(doesPokemonHavePriority, pokemonAndMoves)
+print(list(priorityPokemon))
+
+# That was with our own function, lets try using a built i (lambda) one
+# I quite like the example actually 
+
+backwardsWords = ["hello", "test", "kiosk", "anutforajaroftuna", "hannah",
+                  "go hang a salami im a lasagna hog" "racecar", "godog", 
+                  "yobananaboy", "neveroddoreven"]
+
+palindromes = filter(lambda word: word == word[::-1], backwardsWords)
+print(list(palindromes))
 
