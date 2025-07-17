@@ -58,3 +58,20 @@ backwardsWords = ["hello", "test", "kiosk", "anutforajaroftuna", "hannah",
 palindromes = filter(lambda word: word == word[::-1], backwardsWords)
 print(list(palindromes))
 
+""" R E D U C E """
+# Passes the elements to an interable function of two arguments. Syntax:
+# reduce(function, iterable[, initial])
+#(that is horrible, with the [,) unless it is a typo
+
+# it's main benefit over a loop is it removes the logic
+# obviously there is also a nice chain with map and filter
+
+from functools import reduce
+cart = [
+    {"name": "eggs", "price" : 1.99},
+    {"name": "milk", "price" : 0.99},
+    {"name": "cheese", "price" : 2.99},
+]
+
+total = reduce(lambda acc, item: acc + item["price"], cart, 2.79) #delivery
+print(f"{total:.2f}") # otherwise like 12 dp
