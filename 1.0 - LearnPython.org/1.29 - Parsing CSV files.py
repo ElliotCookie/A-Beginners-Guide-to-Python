@@ -69,4 +69,5 @@ with open(CSVFile, 'w', newline='', encoding='utf-8') as newCSVFile:
         
 
 #Right so after all that there is a csv.DictWriter and DictReader
+#Will need to do this tomorrow
 
