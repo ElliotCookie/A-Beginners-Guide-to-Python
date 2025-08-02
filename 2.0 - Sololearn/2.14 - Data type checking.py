@@ -10,7 +10,7 @@ type(balance)
 
 budget = 200
 expenses = "180"
-#savings = budget - expenses
+savings = budget - expenses
 
 
 x = 9

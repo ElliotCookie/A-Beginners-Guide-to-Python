@@ -17,8 +17,6 @@ b =str(a)
 """ Lesson Takeaways
 Great job! You learned that:
 
- 
-
 🌟 you can change the data type of a value with int(), float() and str()
 
 🌟 there are implicit and explicit data type conversions in Python
