@@ -17,3 +17,13 @@ def discounted(price, discount):
 
 # YEAH BUDDY, ALL DONE NOW!
 # TIME TO RATE IT
+
+""" 
+dark mode
+testing on stuff that will always error anyway
+paywalls 
+testing on stuff from previous question
+lots of clicking input, not much typing
+covered lists, no dictionaries etc
+
+ """
