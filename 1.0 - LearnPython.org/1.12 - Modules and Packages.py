@@ -114,7 +114,7 @@ def mergesort(list):
 def merge (left_half, right_half):
     i = 0, j = 0, merged = []
     #while LH and RH have stuff in, this is a signal to populate MERGED
-    while len(left_half) + len(right_half) <> 0: #need syntax for is not equal
+    while len(left_half) + len(right_half) <> 0: #need syntax for is not equal - !=
         for i in len(left_half):
             for j in len(right_half):
                 #WHICH IS BIGGER
