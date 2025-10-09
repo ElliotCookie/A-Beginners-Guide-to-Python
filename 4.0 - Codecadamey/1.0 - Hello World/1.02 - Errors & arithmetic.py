@@ -42,7 +42,7 @@ fish_in_clarks_pond = fish_in_clarks_pond - number_of_fish_caught
 
 
 august_rainfall = 4.91
-annual_rainfall += august_rainfall
+annual_rainfall = august_rainfall
 
 september_rainfall = 5.16
 october_rainfall = 7.20
@@ -50,3 +50,9 @@ november_rainfall = 5.06
 december_rainfall = 4.06
 
 annual_rainfall += (september_rainfall + october_rainfall + november_rainfall + december_rainfall)
+
+cucumbers = 7
+price_per_cucumber = 3.25
+
+total_cost = cucumbers * price_per_cucumber
+print(total_cost)
