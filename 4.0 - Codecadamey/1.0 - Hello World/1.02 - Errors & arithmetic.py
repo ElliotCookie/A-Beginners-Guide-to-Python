@@ -57,4 +57,56 @@ price_per_cucumber = 3.25
 total_cost = cucumbers * price_per_cucumber
 print(total_cost)
 
-#nudge
+
+#Two Types of Division
+cucumbers = 100
+num_people = 6
+
+#Just doing it like this gives the whole number
+whole_cucumbers_per_person = 100/6
+print(whole_cucumbers_per_person)
+
+#Two ways to make the decimal place
+method_one = float(cucumbers)/num_people
+#method_two = cucumbers./num_people.
+# looks like method two is for Py 2 only
+# wait
+test = 100. 
+method_two = test / num_people
+print(method_two)
+
+
+print(method_one)
+
+#If we want a string to span multiple lines, we can also use triple quotes:
+#I did not know this was a thing?!
+address_string = """136 Whowho Rd
+Apt 7
+Whosville, WZ 44494"""
+print(address_string)
+
+age_is_12 = False # remembering this is a capital letter
+
+
+#Use can use str(), int() and float() to basially do arithmatic and print 
+# data types interchangably
+
+float_1 = 0.25
+float_2 = 40.0
+
+product = float_1 * float_2
+big_string = (f"The product was {product}")
+#big_string = "The product was " + str(product)
+print(big_string)
+
+
+#big test at the end!!
+skill_completed = "Python Syntax"
+exercises_completed = 13
+#The amount of points for each exercise may change, because points don't exist yet
+points_per_exercise = 5
+point_total = 100
+point_total += exercises_completed * points_per_exercise
+
+print(f"I got {point_total} points!")
+#print("I got ") + str(point_total) + " points!"
