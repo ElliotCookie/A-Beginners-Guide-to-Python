@@ -50,3 +50,55 @@ bool_five =  99 != (98 + 1)
 
 #Making a mental note that even though my code is the same as the example solution, the website won't let me pass
 
+
+# Make me true!
+bool_one = 3 < 5  # We already did this one for you!
+
+# Make me false!
+bool_two = 5 < 3
+
+# Make me true!
+bool_three = 5 == 5
+
+# Make me false!
+bool_four = 5!=5
+
+# Make me true!
+bool_five =  3 < 5
+
+
+""" Boolean operators compare statements and result in boolean values. There are three boolean operators:
+
+and, which checks if both the statements are True;
+or, which checks if at least one of the statements is True;
+not, which gives the opposite of the statement. """
+
+#last time we found a good way to remember this
+#something like and is negative, or is +ve 
+#negative - N - aNd, pOstitive - O - Or
+
+print(bool(-(-(-(-2))) == -2 and 4 >= 16 ** 0.5)) # don't forget caps
+print(bool(19 % 4 != 300 / 10 / 10 and False))
+print(bool(-(1 ** 2) < 2 ** 0 and 10 % 10 <= 20 - 10 * 2))
+
+#same again, it won't let me submit my answer (even tho same as example solution) 
+
+print("OR practise")
+print(bool(2 ** 3 == 108 % 100 or 'Cleese' == 'King Arthur'))
+print(bool(100 ** 0.5 >= 50 or False))
+print(bool(1 ** 100 == 100 ** 1 or 3 * 2 * 1 != 3 + 2 + 1))
+
+#Didn't need to do this, it's already filled in!
+
+#This is interesting:
+""" Boolean 
+operators
+Preview: Docs Loading link description
+ aren’t just evaluated from left to right. Just like 
+with
+Preview: Docs Loading link description
+ arithmetic operators, there’s an order of operations for boolean operators:
+
+not is evaluated first;
+and is evaluated next;
+or is evaluated last. """
