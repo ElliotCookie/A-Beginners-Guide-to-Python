@@ -102,3 +102,18 @@ Preview: Docs Loading link description
 not is evaluated first;
 and is evaluated next;
 or is evaluated last. """
+
+# Make me false!
+bool_one = (2 <= 2) and "Alpha" == "Bravo"  # We did this one for you!
+
+# Make me true!
+bool_two = (10 > 5) or (3 < 1)
+
+# Make me false!
+bool_three = not (4 == 4)
+
+# Make me true!
+bool_four = (7 != 2) and not (3 > 5)
+
+# Make me true!
+bool_five = not (6 < 2) or (1 == 1)
