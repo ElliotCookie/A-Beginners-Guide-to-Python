@@ -118,4 +118,69 @@ bool_four = (7 != 2) and not (3 > 5)
 # Make me true!
 bool_five = not (6 < 2) or (1 == 1)
 
-#still trying!
+""" CONDITIONALS AND CONTROL FLOW """
+
+def using_control_once():
+    if True:
+        return "Success #1"
+
+def using_control_again():
+    if True:
+        return "Success #2"
+
+print (using_control_once())
+print (using_control_again())
+
+#we can add more to that, if we don't want the true if we can do else
+
+answer = "'Tis but a scratch!"
+
+def black_knight():
+    if answer == "'Tis but a scratch!":
+        return True
+    else:             
+        return False       # Make sure this returns False
+
+def french_soldier():
+    if answer == "Go away, or I shall taunt you a second time!":
+        return True
+    else:             
+        return False       # Make sure this returns False
+
+#logically following on, we have elif
+
+def greater_less_equal_5(answer):
+    if answer > 5:
+        return 1
+    elif answer < 5:          
+        return -1
+    else:
+        return 0
+        
+print (greater_less_equal_5(4))
+print (greater_less_equal_5(5))
+print (greater_less_equal_5(6))
+
+#We sort of have the purpose of functions introduced here
+
+# Complete the if and elif statements!
+def grade_converter(grade):
+    if grade >= 90:
+        return "A"
+    elif 80 <= grade <= 89:
+        return "B"
+    elif 70 <= grade <= 79:
+        return "C"
+    elif 65 <= grade <= 69:
+        return "D"
+    else:
+        return "F"
+      
+# This should print an "A"      
+print (grade_converter(92))
+
+# This should print a "C"
+print (grade_converter(70))
+
+# This should print an "F"
+print (grade_converter(61))
