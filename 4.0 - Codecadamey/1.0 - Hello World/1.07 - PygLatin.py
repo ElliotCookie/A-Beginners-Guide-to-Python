@@ -13,7 +13,8 @@ if len(original) > 0 and original.isalpha() == True: #don't forget ()
     print("Valid string: %s" % (word))
     first = word[0]
     new_word = word + first + pyg
-    new_word = new_word[1:len(new_word)]
+    new_word = new_word[1:len(new_word)] #lots of repeats here
+    print(new_word)
 else:
     print("empty or non-alpha")
 
