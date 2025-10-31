@@ -14,3 +14,5 @@ def power(base, exponent):  # Add your parameters here!
 base_input = int(input("base: "))
 power_input = int(input("power: "))
 power(base_input, power_input) 
+
+#looking at making an etf creator, no progress!
