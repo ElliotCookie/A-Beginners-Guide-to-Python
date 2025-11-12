@@ -40,5 +40,26 @@ def by_three(number):
     return cube(number)
   else:
     return False
-  
-root = sqrt(25)
+
+import math   
+root = math.sqrt(25) #using the dot so it knows where to look
+print(root)
+
+from math import sqrt
+root = sqrt(32) #because we've imported the function we don't need to declare it
+print(root)
+
+from math import * #this lazily brings in everything
+print (dir(math)) #(everything, to see all functions)
+
+#note to self, quite enjoying this bit of the course
+
+
+#okay, moving onto another bit of the course
+maximum = max (3, 5, -9)
+print(maximum) # prints 5
+
+minimum = min(-2, 4, 0)
+print(minimum) # prints -2
+
+absolute = abs(maximum, minimum) #although apparently this only takes a single number, so this will error
