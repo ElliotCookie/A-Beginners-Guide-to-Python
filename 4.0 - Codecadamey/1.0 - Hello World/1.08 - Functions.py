@@ -62,4 +62,43 @@ print(maximum) # prints 5
 minimum = min(-2, 4, 0)
 print(minimum) # prints -2
 
-absolute = abs(maximum, minimum) #although apparently this only takes a single number, so this will error
+#absolute = abs(maximum, minimum) although apparently this only takes a single number, so this will error
+absolute = abs(minimum)
+
+#this lesson is about another function
+print(type(30)) # prints <class 'int'>
+print(type(20.3))  # prints <class 'float'>
+print(type("ten")) # prints <class 'str'>
+
+def shut_down(s):
+  if s == "yes":
+    return "Shutting down"
+  elif s == "no":
+    return "Shutdown aborted"
+  else:
+    return "Sorry"
+  
+#so I pasted that on line 2 and not line 1, it was perfectly correct, but on the wrong line, so I got a fail
+
+from math import sqrt #again, it's for the crechendo 
+print(sqrt(13689))
+
+def distance_from_zero(distance):
+  if type(distance) == (int or float): # this bit is wrong
+    return abs(distance)
+  else:
+    return "nope"
+  
+print(distance_from_zero(-9.5))  
+print(distance_from_zero("seven"))#
+
+def distance_from_zero(distance):
+  if type(distance) == int or type(distance) == float:
+    return abs(distance)
+  else:
+    return "nope"
+  
+print(distance_from_zero(-9.5))  
+print(distance_from_zero("seven"))
+
+""" LESSON COMPLETE!! """
