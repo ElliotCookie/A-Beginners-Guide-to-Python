@@ -102,3 +102,54 @@ print(distance_from_zero(-9.5))
 print(distance_from_zero("seven"))
 
 """ LESSON COMPLETE!! """
+
+
+def answer():
+  return 42
+
+def hotel_cost(nights):
+  return 140 * nights
+
+def plane_ride_cost(city):
+  if city == "Charlotte": #errored me for the spelling
+    return 183
+  elif city ==  "Tampa":
+    return 220
+  elif city ==  "Pittsburgh":
+    return 222
+  elif city ==  "Los Angeles": 
+    return 475
+  
+def rental_car_cost(days):
+  cost = days * 40
+  if days >= 7:
+    cost -= 50
+  elif days >= 3:
+    cost -=20
+  return cost
+
+
+
+def trip_cost(city, days):
+  return hotel_cost(days - 1) + plane_ride_cost(city) + rental_car_cost(days)
+
+print("City cost thing")
+city = input("City: ")
+days = int(input("Days: "))
+print(f"The total trip cost to {city}is: {trip_cost(city, days)}")
+
+
+#Now with spending money
+def trip_cost(city, days, spanding_money):
+  return spanding_money + hotel_cost(days - 1) + plane_ride_cost(city) + rental_car_cost(days)
+
+print("City cost thing")
+city = input("City: ")
+days = int(input("Days: "))
+spending = int(input("Spending: "))
+print(f"The total trip cost to {city}is: {trip_cost(city, days, spending)}")
+
+#Cost to LA
+print(trip_cost("Los Angeles", 5, 600))
+
+#MODULE COMPLETE!!
