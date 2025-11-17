@@ -44,3 +44,62 @@ list_length = len(suitcase) # Set this to the length of suitcase
 
 print ("There are %d items in the suitcase." % (list_length))
 print (suitcase)
+
+
+# New lesson
+suitcase = ["sunglasses", "hat", "passport", "laptop", "suit", "shoes"]
+
+# The first and second items (index zero and one)
+first = suitcase[0:2]
+
+# Third and fourth items (index two and three)
+middle = suitcase[2:4] # remember to plus one at the end
+
+# The last two items (index four and five)
+last =  suitcase[4:6]
+
+
+animals = "catdogfrog"
+
+# The first three characters of animals
+cat = animals[:3]
+
+# The fourth through sixth characters
+dog = animals[3:6]
+
+# From the seventh character to the end
+frog = animals[6:] # notice the overlap
+
+
+
+
+
+animals = ["aardvark", "badger", "duck", "emu", "fennec fox"]
+duck_index = animals.index("duck") # Use index() to find "duck"
+
+# Your code here!
+animals.insert(duck_index, "cobra")
+
+print (animals) # Observe what prints after the insert operation
+
+
+
+
+# Using for loops to go over an entire list
+my_list = [1,9,3,8,5,7]
+
+for number in my_list:
+  # Your code here
+  print(number * 2) #no need for the [], because indexing is already handled
+
+
+
+
+start_list = [5, 3, 1, 2, 4]
+square_list = []
+
+# Your code here!
+for number in start_list:
+  square_list.append(number**2)
+square_list.sort() #don't forget brackets
+print (square_list)  
