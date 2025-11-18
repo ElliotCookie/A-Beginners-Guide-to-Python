@@ -103,3 +103,36 @@ for number in start_list:
   square_list.append(number**2)
 square_list.sort() #don't forget brackets
 print (square_list)  
+
+
+
+#Dictionaries
+#these use keys to look things up, instead of an index
+d = {'key1' : 1, 'key2' : 2, 'key3' : 3}
+#also notice the different brackets
+
+# Assigning a dictionary with three key-value pairs to residents:
+residents = {'Puffin' : 104, 'Sloth' : 105, 'Burmese Python' : 106}
+
+print (residents['Puffin']) # Prints Puffin's room number
+
+# Your code here!
+print(residents['Sloth'])
+print(residents['Burmese Python'])
+
+
+
+#these are mutable, so we can add to them after they are created
+#empty {} is an empty dict
+#len counts the amount of pairs, not keys and item stored '
+menu = {} # Empty dictionary
+menu['Chicken Alfredo'] = 14.50 # Adding new key-value pair
+print (menu['Chicken Alfredo'])
+
+# Your code here: Add some dish-price pairs to menu!
+menu['Pasta pizza'] = 16
+menu['Kebop'] = 12
+menu['Drink'] = 3
+
+print ("There are " + str(len(menu)) + " items on the menu.")
+print (menu)
