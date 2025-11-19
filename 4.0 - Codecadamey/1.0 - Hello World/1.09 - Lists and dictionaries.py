@@ -136,3 +136,29 @@ menu['Drink'] = 3
 
 print ("There are " + str(len(menu)) + " items on the menu.")
 print (menu)
+
+
+
+#We can delete and change dictionary keys
+# key - animal_name : value - location 
+zoo_animals = { 'Unicorn' : 'Cotton Candy House',
+'Sloth' : 'Rainforest Exhibit',
+'Bengal Tiger' : 'Jungle House',
+'Atlantic Puffin' : 'Arctic Exhibit',
+'Rockhopper Penguin' : 'Arctic Exhibit'}
+# A dictionary (or list) declaration may break across multiple lines
+
+# Removing the 'Unicorn' entry. (Unicorns are incredibly expensive.)
+del zoo_animals['Unicorn']
+
+# Your code here!
+del zoo_animals['Sloth']
+del zoo_animals['Bengal Tiger']
+zoo_animals["Rockhopper Penguin"] = "rock world" #remember it is key; then thing
+
+print (zoo_animals)
+
+
+#back to lists
+backpack = ['xylophone', 'dagger', 'tent', 'bread loaf']
+backpack.remove("dagger")
