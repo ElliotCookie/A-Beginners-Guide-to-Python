@@ -64,3 +64,24 @@ for key in prices:
     print
 #after all that, codecademy told me I was wrong, because I was on a different line
 #but the solution moved the lines! It didn't even use their original code
+
+
+#working out the value
+total = 0
+for price in prices:
+    price_to_print = prices[price] * stock[price]
+    print(price_to_print)
+    total += price_to_print
+print(total)
+
+#shopping at the market
+groceries = ["banana","orange", "apple"]
+
+def compute_bill(food):
+    total = 0
+    for items in groceries:
+        total += prices[key]
+    print(total)
+    return total
+
+
