@@ -79,9 +79,23 @@ groceries = ["banana","orange", "apple"]
 
 def compute_bill(food):
     total = 0
-    for items in groceries:
-        total += prices[key]
+    for items in food:
+        total += prices[items]
     print(total)
     return total
 
+compute_bill(groceries)
 
+#changing that function to only count in-stock
+print("stock > 0")
+print
+def compute_bill(food):
+    total = 0
+    for items in food:
+        if stock[items] > 0:
+            total += prices[items]
+            stock[items] -= 1
+    print(total)
+    return total
+
+compute_bill(groceries)
