@@ -46,3 +46,13 @@ for student in dict_list:
     print (student["quizzes"])
     print (student["tests"])
 
+
+#doing the average function
+def average(numbers):
+    total = sum(numbers)
+    total = float(total)
+    return (total / len(numbers))
+
+trial = [3, 4, 5]
+print("Average of numbers is:")
+print(average(trial))
