@@ -56,3 +56,14 @@ def average(numbers):
 trial = [3, 4, 5]
 print("Average of numbers is:")
 print(average(trial))
+
+
+#another average function
+def get_average(student):
+    homework = average(student["homework"])
+    quizzes = average(student["quizzes"])
+    tests = average(student["tests"])
+    return ((homework*0.1)+(quizzes*0.3)+(tests*0.6))
+
+print("average of lloyd is")
+print(get_average(lloyd))
