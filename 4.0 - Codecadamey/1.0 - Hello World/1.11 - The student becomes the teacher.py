@@ -1,13 +1,13 @@
 lloyd = {}
 alice = {}
 tyler = {}
-dict_list = [lloyd, alice, tyler]
+class_list = [lloyd, alice, tyler]
 
 newkeys = ["name", "homework", "quizzes", "tests"]
 
 def adding_keys_to_dicts(keylist):
     for keys in keylist:
-        for dicts in dict_list:
+        for dicts in class_list:
             dicts[keys] = []
     
 adding_keys_to_dicts(newkeys)
@@ -16,7 +16,7 @@ lloyd["name"] = "Lloyd"
 alice["name"] = "Alice"
 tyler["name"] = "Tyler"
 
-for dict in dict_list:
+for dict in class_list:
     print(dict)
 
 
@@ -40,7 +40,7 @@ tyler = {
   "tests": [100.0, 100.0]
 }
 
-for student in dict_list:
+for student in class_list:
     print (student["name"])
     print (student["homework"])
     print (student["quizzes"])
@@ -67,3 +67,28 @@ def get_average(student):
 
 print("average of lloyd is")
 print(get_average(lloyd))
+
+#adding the get grade function
+
+def get_letter_grade(score):
+    if score >= 90:
+        return "A"
+    elif score >= 80:
+        return "B"
+    elif score >= 70:
+        return "C"
+    elif score >= 60:
+        return "D"
+    else:
+        return "F"
+    
+print(get_letter_grade(get_average(lloyd)))
+
+#doing the class average
+
+def get_class_average(class_list):
+    results = []
+    for student in class_list:
+        stu_av = get_average(student)
+        results.append(stu_av)
+    return average(results)
