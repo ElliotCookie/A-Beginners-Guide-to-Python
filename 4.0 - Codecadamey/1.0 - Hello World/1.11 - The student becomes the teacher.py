@@ -92,3 +92,11 @@ def get_class_average(class_list):
         stu_av = get_average(student)
         results.append(stu_av)
     return average(results)
+
+students = [alice, lloyd, tyler]
+avg = get_class_average(students)
+print(avg)
+print(get_letter_grade(avg))
+
+class_letter = get_letter_grade(avg)
+print(class_letter)
