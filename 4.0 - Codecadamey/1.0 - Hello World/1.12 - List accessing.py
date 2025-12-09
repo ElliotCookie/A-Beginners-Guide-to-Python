@@ -61,3 +61,49 @@ def print_list(x):
       print(items)
 
 print_list(n) # had the right code but it didn't like it bcos spacing
+
+#Mental note for later, this List and Functions bit is really good
+#probably the best bit of the course so far, just bashing out examples
+
+def double_list(x):
+  new_list = []
+  for item in x:
+    new_list.append(x*2)
+
+#oh, they give you scaffold:
+n = [3, 5, 7]
+
+def double_list(x):
+  for i in range(0, len(x)):
+      x[i] = x[i] * 2
+  # Don't forget to return your new list!
+  return x
+
+print(double_list(n))
+
+
+#Passing a range into a function
+
+def my_function(x):
+  for i in range(0, len(x)):
+    x[i] = x[i]
+  return x
+
+print(my_function(range(0, 3, 1))) # Add your range between the parentheses!
+
+""" The range function has three different versions:
+
+range(stop)
+range(start, stop)
+range(start, stop, step) """
+
+#iterating over a list in a function
+n = [3, 5, 7]
+
+def total (numbers):
+  result = 0
+  for items in numbers:
+    result += items
+  return result
+
+print(total(n))
