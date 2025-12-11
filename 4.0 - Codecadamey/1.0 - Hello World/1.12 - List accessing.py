@@ -89,7 +89,8 @@ def my_function(x):
     x[i] = x[i]
   return x
 
-print(my_function(range(0, 3, 1))) # Add your range between the parentheses!
+#print(my_function(range(0, 3, 1))) 
+print(my_function(n)) #hmm, this is now broken
 
 """ The range function has three different versions:
 
@@ -107,3 +108,35 @@ def total (numbers):
   return result
 
 print(total(n))
+
+
+#using strings in lists in functions (joining strings, concatonating)
+def join_strings(words):
+  result = ""
+  for word in words:
+    result = result + word
+  return result
+
+names = ["alice", "ben", "charles"]
+
+print(join_strings(names))
+
+
+#Joining two lists together
+def join_lists(x, y):
+  return x + y
+
+print (join_lists(n, names))
+
+
+#using a list of lists in a function
+n = [[1, 2, 3], [4, 5, 6, 7, 8, 9]]
+
+def flatten(lists):
+  results = []
+  for numbers in lists:
+    for number in numbers:
+      results.append((number))
+  return results
+
+print(flatten(n))
