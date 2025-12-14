@@ -141,5 +141,3 @@ def flatten(lists):
 
 print(flatten(n))
 
-#still here!
-#and again
