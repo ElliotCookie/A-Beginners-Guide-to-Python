@@ -47,12 +47,15 @@ guess_col = int(input("Guess Col: "))
 if (guess_row == ship_row) & (guess_col == guess_col):
   print("Congratulations! You sank my battleship!") 
 else:
-  print("You missed my battleship!")
-  #find board row
-  #go to location in row
-  #set value there to X
-  attacked_row = board[guess_row-1]
-  attacked_row[guess_col-1] = "X"
-  print_board(board)
-  # It's saying it doesn't work, but it does?!
-  #they want:1  board[guess_row][guess_col] = "X"
+  if 0 > guess_row or guess_row > 5 or 0 > guess_col or guess_row > 5:
+    print("Oops, that's not even in the ocean.")
+  else:
+    print("You missed my battleship!")
+    #find board row
+    #go to location in row
+    #set value there to X
+    attacked_row = board[guess_row-1]
+    attacked_row[guess_col-1] = "X"
+    print_board(board)
+    # It's saying it doesn't work, but it does?!
+    #they want:1  board[guess_row][guess_col] = "X"
