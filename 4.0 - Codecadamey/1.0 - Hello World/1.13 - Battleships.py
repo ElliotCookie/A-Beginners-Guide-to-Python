@@ -49,6 +49,8 @@ if (guess_row == ship_row) & (guess_col == guess_col):
 else:
   if 0 > guess_row or guess_row > 5 or 0 > guess_col or guess_row > 5:
     print("Oops, that's not even in the ocean.")
+  elif (guess_row == ship_row) & (guess_col == guess_col):
+    print("You guessed that one already.")
   else:
     print("You missed my battleship!")
     #find board row
