@@ -2,7 +2,7 @@ board = []
 """ for coordinates in range(0, 4):
     board.append(["O"] * 5) """
 
-for coordinates in range(5):
+for coordinates in range(0, 5):
   board.append(['O'] * 5)
 #print(board)
 
@@ -48,6 +48,7 @@ for turn in range(4):
 
   if guess_row == ship_row and guess_col == ship_col:
     print ("Congratulations! You sank my battleship!")   
+    break
   else:
     if guess_row not in range(5) or \
       guess_col not in range(5):
@@ -57,4 +58,6 @@ for turn in range(4):
     else:
       print ("You missed my battleship!")
       board[guess_row][guess_col] = "X"
+      if (turn == 3):
+        print("Game over")
     print_board(board)
