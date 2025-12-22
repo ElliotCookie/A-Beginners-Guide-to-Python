@@ -23,3 +23,19 @@ while num < 11:  # Fill in the condition
   print(num*num)
   # Increment num (make sure to do this!)
   num += 1
+
+
+#errors
+choice = (input('Enjoying the course? (y/n)'))
+
+while choice != 'y' and choice != 'n':   # Fill in the condition (before the colon)
+  choice = input("Sorry, I didn't catch that. Enter again: ")
+
+
+#infinite loops
+count = 0
+
+while count < 10:
+  print (count)
+  count += 5
+  # Increment count - although you mean by one, but you it didn't mention this
