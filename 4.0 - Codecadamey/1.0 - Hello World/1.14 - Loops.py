@@ -82,3 +82,42 @@ while guesses_left > 0:
   guesses_left -= 1
 else:
   print("You lose!")
+
+
+#for loops
+print ("Counting...")
+
+for i in range(20):
+  print (i)
+
+
+hobbies = []
+
+for i in range(3):
+  hobbies.append(input("Enter hobby: ")) #it didn't like non-raw_input
+print(hobbies)
+
+
+#strings in for loops
+thing = "spam!"
+
+for c in thing:
+  print (c)
+
+word = "eggs!"
+
+for letters in word:
+  print(letters)
+
+
+#string manipulation
+phrase = "A bird in the hand..."
+
+# Add your for loop
+for char in phrase:
+  if char == "A" or char == "a":
+    print("X")
+  else:
+    print(char)
+  print  
+
