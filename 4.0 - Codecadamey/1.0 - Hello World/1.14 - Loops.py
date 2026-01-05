@@ -121,3 +121,64 @@ for char in phrase:
     print(char)
   print  
 
+
+# going through lists
+numbers  = [7, 9, 12, 54, 99]
+
+print ("This list contains: ")
+
+for num in numbers:
+  print (num)
+
+for num in numbers:
+  sq = num * num
+  print(sq)
+
+
+#looping a dictionary, dictionary loops
+d = {'a': 'apple', 'b': 'berry', 'c': 'cherry'}
+
+for key in d:
+  print(f"{key} {d[key]}")
+  #print key, d[key]
+
+
+#Enumerate function
+choices = ['pizza', 'pasta', 'salad', 'nachos']
+
+print ('Your choices are:')
+for index, item in enumerate(choices):
+  print (index+1, item)
+
+
+#iterating over two lists at once
+list_a = [3, 9, 17, 15, 19]
+list_b = [2, 4, 8, 10, 30, 40, 50, 60, 70, 80, 90]
+
+for a, b in zip(list_a, list_b):
+  if a > b:
+    print(a)
+  else: 
+    print(b)
+
+
+#else statements - unclear what the ask is here...
+fruits = ['banana', 'apple', 'orange', 'tomato', 'pear', 'grape']
+
+print ('You have...')
+for f in fruits:
+  if f == 'tomato':
+    print ('A tomato is not a fruit!') # (It actually is.)
+    break
+  print ('A', f)
+else: #it was as simple as just deleting it
+  print ('A fine selection of fruits!')
+
+
+#creating a for / else statement
+for nums in range(0,5):
+  print(nums)
+else:
+  print("else statement activated")  
+  #BASICALLY YOU MUST USE A NESTED IF WITH A BREAK FOR THIS TO BE USEFUL
+  
