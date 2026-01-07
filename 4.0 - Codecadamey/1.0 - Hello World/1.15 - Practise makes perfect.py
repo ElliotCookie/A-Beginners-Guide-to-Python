@@ -37,3 +37,26 @@ print(digit_sum(10))
 print(digit_sum(1234))
 print(digit_sum(-194))
 
+#5/15 - Factorials
+def factorial(x):
+    total = 1
+    for digits in range(1,x+1):
+        total = total * digits
+    return total
+
+print(factorial(4))
+print(factorial(1))
+print(factorial(9))
+
+#6/15 - is it prime?
+def is_prime(x):
+    for factors in range(1, x-1):
+        if factors > 2 and x % factors == 1:
+            return True # it's therefore prime?
+        
+    return False
+        
+
+print(is_prime(9))
+print(is_prime(17))
+print(is_prime(57))
