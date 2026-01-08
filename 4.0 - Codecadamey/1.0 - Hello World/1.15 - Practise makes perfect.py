@@ -50,13 +50,18 @@ print(factorial(9))
 
 #6/15 - is it prime?
 def is_prime(x):
-    for factors in range(1, x-1):
-        if factors > 2 and x % factors == 1:
-            return True # it's therefore prime?
-        
-    return False
+    if x < 2:
+        return False # anything under 2 isn't prime
+    else: 
+        for factors in range(2, x-1):
+            if x % factors == 0:
+                # if the remainder is 0, it divided perfectly
+                return False 
+        return True
         
 
 print(is_prime(9))
 print(is_prime(17))
 print(is_prime(57))
+
+#7/15 - 
