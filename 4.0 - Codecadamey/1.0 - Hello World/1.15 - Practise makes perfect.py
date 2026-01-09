@@ -64,4 +64,7 @@ print(is_prime(9))
 print(is_prime(17))
 print(is_prime(57))
 
-#7/15 - 
+#7/15 - reversing strings
+
+def reverse(text):
+    
