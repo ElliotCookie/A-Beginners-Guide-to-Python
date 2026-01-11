@@ -67,4 +67,4 @@ print(is_prime(57))
 #7/15 - reversing strings
 
 def reverse(text):
-    
+    length = len(text)
