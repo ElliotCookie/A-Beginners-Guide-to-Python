@@ -68,3 +68,4 @@ print(is_prime(57))
 
 def reverse(text):
     length = len(text)
+    #another difficult day
