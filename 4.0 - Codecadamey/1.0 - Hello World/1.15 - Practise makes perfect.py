@@ -68,4 +68,9 @@ print(is_prime(57))
 
 def reverse(text):
     length = len(text)
-    #another difficult day
+    new_string = ""
+    for chars in range(length, 1):
+        new_string == new_string & chars
+    return new_string
+
+print(reverse("help"))
