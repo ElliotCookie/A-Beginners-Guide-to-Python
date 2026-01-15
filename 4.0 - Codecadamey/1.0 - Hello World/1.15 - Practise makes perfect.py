@@ -69,8 +69,14 @@ print(is_prime(57))
 def reverse(text):
     length = len(text)
     new_string = ""
-    for chars in range(length, 1):
-        new_string == new_string & chars
+    position = 0
+    test_char = text[length -1 ]
+    new_string += test_char
+    for chars in range(2, length + 1):
+        position = length - chars
+        test_char = text[position]
+        new_string += test_char
     return new_string
+#I know this is bad but I'm including it to show it's okay to learn
 
 print(reverse("help"))
