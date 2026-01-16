@@ -80,3 +80,31 @@ def reverse(text):
 #I know this is bad but I'm including it to show it's okay to learn
 
 print(reverse("help"))
+
+
+#8 / 15 - anti vowels
+def anti_vowel(text):
+    vowelless = ""
+    for chars in text:
+        if chars == "a" or chars == "e" or chars == "i" or chars == "o" or chars == "u":
+            #don't forget to define each 'or'
+            continue
+        else:
+            vowelless += chars
+    return vowelless
+
+print(anti_vowel("a long string with lots of vowels"))
+
+ 
+#trying refining 
+def anti_vowel(text):
+    vowelless = ""
+    vowels = ["aeiouAEIOU"]
+    for chars in text:
+        if chars 
+            #don't forget to define each 'or'
+            continue
+        vowelless += chars
+    return vowelless
+
+print(anti_vowel("a long string with lots of vowels"))
