@@ -99,12 +99,28 @@ print(anti_vowel("a long string with lots of vowels"))
 #trying refining 
 def anti_vowel(text):
     vowelless = ""
-    vowels = ["aeiouAEIOU"]
+    vowels = "aeiouAEIOU" #you want a string here, not a list
     for chars in text:
-        if chars 
-            #don't forget to define each 'or'
+        if chars in vowels:
             continue
         vowelless += chars
     return vowelless
 
-print(anti_vowel("a long string with lots of vowels"))
+print(anti_vowel("a different string we are using for refining"))
+
+#9 / 15 - Scrabble score
+def scrabble_score(word):
+    word == word.lower()
+    sc_score = 0
+    score = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2, 
+         "f": 4, "i": 1, "h": 4, "k": 5, "j": 8, "m": 3, 
+         "l": 1, "o": 1, "n": 1, "q": 10, "p": 3, "s": 1, 
+         "r": 1, "u": 1, "t": 1, "w": 4, "v": 4, "y": 4, 
+         "x": 8, "z": 10}
+    for char in word:
+        for letter in score:
+            if char == letter:
+                sc_score += score[char]
+    return sc_score
+
+print(scrabble_score("DuNe"))
