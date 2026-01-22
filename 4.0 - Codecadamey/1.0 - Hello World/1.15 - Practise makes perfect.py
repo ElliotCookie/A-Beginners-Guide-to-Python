@@ -148,9 +148,11 @@ print(scrabble_score("testerWord"))
 #10/15 - censor
 def censor(text, word):
     #return text with chosen word in ****s
-    for char in text:
-        if text[char:len(word)] == word:
-            text[char:len(word)] = "*"*len(word)
+    for i in range(0, len(text)):
+        test_word = text[i:len(word)+1]
+        print(test_word)
+        if test_word == word:
+            text[i:len(word)] = "*"*len(word)
     return True
 
 print(censor("banter", "ant"))
