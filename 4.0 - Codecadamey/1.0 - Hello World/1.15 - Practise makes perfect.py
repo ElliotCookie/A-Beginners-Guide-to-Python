@@ -128,10 +128,8 @@ print(scrabble_score("dune"))
 print(scrabble_score("random"))
 print()
 
-
-
 #refining
-print("refined version:")
+print("refined scrabble version:")
 def scrabble_score(word):
     sc_score = 0
     score = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2, 
@@ -146,20 +144,99 @@ def scrabble_score(word):
 print(scrabble_score("testerWord"))
 
 #10/15 - censor
+print("Censor task")
 def censor(text, word):
     #return text with chosen word in ****s
+    new_text = ""
     for i in range(0, len(text)):
         test_word = text[i:len(word)+1]
         print(test_word)
         if test_word == word:
-            text[i:len(word)] = "*"*len(word)
-    return True
+            new_text += text[0:i] + "*"*len(word)
+    return new_text
 
 print(censor("banter", "ant"))
 
 #some tests
 test = "wordsmith"
+print("Some test words:")
 print(test[0:2]) #wo
 print(test[0::2]) #wrsih
 print(test[::3]) #wdi
 print(test[:2:2]) #w
+
+def censor2(text, word):
+    #return text with chosen word in ****s
+
+    print("Entering censor function")
+    #text = incoming word that we want to censor
+    #word = censored word
+    new_text = ""
+    word_checker = ""
+    for char in text:
+        print("char is")
+        print(char)
+        word_checker += char
+        print("word checker is")
+        print(word_checker)
+        if len(word_checker) == len(word):
+            if word_checker == word:
+                new_text += "*"*len(word)
+                print("new text is")
+                print(new_text)
+                word_checker = ""
+            else:
+                new_text += word_checker[0:1]
+                print("new text is now")
+                print(new_text)
+                word_checker = word_checker[1:]
+                print("word checker is now")
+                print(word_checker)
+    new_text += word_checker
+
+                        
+    """
+    go through text char by char
+    append each char to a temp string
+    when the temp string has the len(word)
+    check if temp_string == word
+    if it does then add that amount of asterixes to the new_text
+    start counting again with an empty temp string
+    if it doesn't (e.g ban =/= ant)
+    add the first letter to the new_text
+    """
+    return new_text
+print("New attempt at censor")
+print(censor2("banterclauseWithants", "ant"))
+
+#lets tidy that up and remove fluff
+
+def censor3(text, word):
+    new_text, word_checker = "", ""
+    for char in text:
+        word_checker += char
+        if len(word_checker) == len(word):
+            if word_checker == word:
+                new_text += "*"*len(word)
+                word_checker = ""
+            else:
+                new_text += word_checker[0:1] #apparently n^2
+                word_checker = word_checker[1:]
+    return new_text + word_checker
+print(censor3("morewordsthataretiedtogethere", "re"))
+
+#the example solution btw
+def censor(text, word):
+    words = text.split()
+    result = ''
+    stars = '*' * len(word)
+    count = 0
+    for i in words:
+        if i == word:
+            words[count] = stars
+        count += 1
+    result =' '.join(words)
+
+    return result
+  
+print(censor("this hack is wack hack", "hack"))
