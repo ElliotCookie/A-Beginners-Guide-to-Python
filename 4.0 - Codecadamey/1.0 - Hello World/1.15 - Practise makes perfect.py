@@ -240,3 +240,41 @@ def censor(text, word):
     return result
   
 print(censor("this hack is wack hack", "hack"))
+
+
+#11/15 - count
+print("Count exercise")
+def count (sequence, items):
+    #check how many times ITEM appears in list[sequence]
+    #can't use the list method, have to do it the long way
+    #reutrn an int, accept int, str, flt or even a list!
+    #don't forget that list is reserved word in python
+
+    rolling_count = 0
+    for bits_of_list in sequence:
+        if items == bits_of_list:
+            rolling_count += 1
+    return rolling_count
+
+print(count([1, 2, 3, 4, 1, 4, 'a','A'], 1)) # 2
+print(count([1, 2, 3, 4, 1, 4, 'a','A'], 'a')) # 1
+print(count([1, 2, 3, 4, 1, 4, 'a','A'], ['a', 'A'])) # 0
+print(count([1, 2, 3, 4, 1, 4, ['a', 'A'],'A'], ['a', 'A'])) # 1
+
+
+# 12 / 15 - purify 
+# a function that taks a list of numbers
+# removes the odd ones
+# returns the purified result
+# no modification, return a new list
+print("Purify function")
+
+def purify(unpurified):
+    purified = []
+    for item in unpurified:
+        if item % 2 == 0: # not: !=
+            purified.append(item)
+    return purified
+
+print(purify([1, 2, 3, 4, 1, 4]))
+# shorter than the example ;) nice
