@@ -278,3 +278,13 @@ def purify(unpurified):
 
 print(purify([1, 2, 3, 4, 1, 4]))
 # shorter than the example ;) nice
+
+
+def product (int_list):
+    total = 0
+    for int in int_list:
+        total = total * int
+    return total
+
+print(product([4, 5, 6]))
+#need to figure out how to get rid of the 0
