@@ -281,10 +281,24 @@ print(purify([1, 2, 3, 4, 1, 4]))
 
 
 def product (int_list):
-    total = 0
+    total = 1 # an easy way to get rid of 0?
     for int in int_list:
         total = total * int
     return total
 
 print(product([4, 5, 6]))
-#need to figure out how to get rid of the 0
+
+
+#14 / 15 - removing duplicates
+# taking a list and removing any of the elements that are the same 
+def remove_duplicates(unrefined_list):
+    refined_list = []
+    for uritem in unrefined_list:
+        for ritem in refined_list:
+            if uritem == ritem:
+                continue
+            else:
+                refined_list.append(uritem)
+    return refined_list
+
+print(remove_duplicates([1, 1, 2, 2]))
