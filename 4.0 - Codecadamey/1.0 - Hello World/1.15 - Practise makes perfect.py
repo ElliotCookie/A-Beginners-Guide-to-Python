@@ -297,8 +297,7 @@ def remove_duplicates(unrefined_list):
         for ritem in refined_list:
             if uritem == ritem:
                 continue
-            else:
-                refined_list.append(uritem)
+        refined_list.append(uritem)
     return refined_list
 
 print(remove_duplicates([1, 1, 2, 2]))
