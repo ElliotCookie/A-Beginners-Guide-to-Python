@@ -291,13 +291,108 @@ print(product([4, 5, 6]))
 
 #14 / 15 - removing duplicates
 # taking a list and removing any of the elements that are the same 
-def remove_duplicates(unrefined_list):
-    refined_list = []
-    for uritem in unrefined_list:
+""" def remove_duplicates(unrefined_list):
+    items_seen_sofar = []
+    print(unrefined_list[0])
+    items_seen_sofar.append(unrefined_list[0])
+
+    for uritem in range(1, len(unrefined_list)):
+        if uritem != in(items_seen_sofar):
+
+
+numbers = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
+newlist = [n for n in numbers if n > 0]
+print(newlist) 
+
+
+    for uritem in range(1, len(unrefined_list)):
         for ritem in refined_list:
-            if uritem == ritem:
-                continue
-        refined_list.append(uritem)
+            if unrefined_list[uritem] != ritem:
+                
     return refined_list
 
-print(remove_duplicates([1, 1, 2, 2]))
+print(remove_duplicates([1, 1, 2, 2])) """
+
+#Starting over
+#I'm convinced the best thing you can do is pseudo code it
+
+
+def remove_duplicates(unrefined_list):
+    # Incoming list = unrefined list
+    # items seen before = list
+    # Something for the output?
+
+    # look at item one of the unrefined list
+    # have we seen it before? 
+    # take that variable and then loop through our list of stuff seen before
+    # did we see it there?
+    # if we didn't, then we should add it, so now it has been seen before
+
+    #move to 2nd item of list, and then 3rd etc
+    # each time, check the single element against the list of 
+    return True
+
+print(remove_duplicates([1, 3, 1, 2, 6, 4, 2, 1, 4, 3, 5])) 
+
+# now flesh it out with code to replace the pseudo
+
+def remove_duplicates(unrefined_list):
+    seen_items = []
+    
+    seen_items.append(unrefined_list[0])
+    for uritem in unrefined_list:
+        uritem_in_question = uritem
+        print("New loop, new ur iq:")
+        print(uritem_in_question)
+        flag = False
+        for si in seen_items:
+            sitem_iq = si
+            print("Another one, new si iq:")
+            print(sitem_iq)
+
+            if uritem_in_question == sitem_iq:
+                flag = True
+
+        if flag == False:
+            seen_items.append(uritem_in_question)        
+            
+
+    # look at item one of the unrefined list
+    # have we seen it before? 
+    # take that variable and then loop through our list of stuff seen before
+    # did we see it there?
+    # if we didn't, then we should add it, so now it has been seen before
+
+    #move to 2nd item of list, and then 3rd etc
+    # each time, check the single element against the list of 
+    return seen_items
+
+#print(remove_duplicates([1, 3, 1, 2, 6, 4, 2, 1, 4, 3, 5])) 
+
+#nailed it, now lets refine
+
+
+def remove_duplicates(unrefined_list):
+    seen_items = []
+    seen_items.append(unrefined_list[0])
+    for uritem in unrefined_list:
+        flag = False
+        for si in seen_items:
+            if uritem == si:
+                flag = True
+        if flag == False:
+            seen_items.append(uritem)        
+    return seen_items
+
+print(remove_duplicates([1, 3, 1, 2, 6, 4, 2, 1, 4, 3, 5])) 
+
+# really good now, cheating a bit
+
+def advanced_rem_dup(xs):
+    out = []
+    for x in xs:
+        if x not in out:
+            out.append(x)
+    return out
+
+print(advanced_rem_dup(["cat", "dog", "mouse", "cat", "bird", "dog", "hawk"]))
