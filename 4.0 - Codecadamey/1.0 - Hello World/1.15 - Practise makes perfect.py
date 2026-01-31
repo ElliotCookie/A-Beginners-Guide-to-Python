@@ -396,3 +396,114 @@ def advanced_rem_dup(xs):
     return out
 
 print(advanced_rem_dup(["cat", "dog", "mouse", "cat", "bird", "dog", "hawk"]))
+
+#15/15 - median
+# write a function that takes an input and returns the median value (this is the middle number btw)
+# The list can be of any size and the numbers are not guaranteed to be in any particular order. Make sure to sort it!
+# If the list contains an even number of elements, your function should return the average of the middle two.
+
+def mergesort(list):
+    #triggers when things are already sorted, e.g [8]
+    if len(list) <= 1:
+        return list # *** where value is returned
+    
+    middle = len(list) // 2 # // is integer floor, rounds down to nearest whole no
+    left_half = list[0 : middle]
+    right_half = list[middle : ]
+
+    #adding in sorted lists
+    #I think we are saying there is almost a phantom break here, that this will eventially produce a list length of 1 item each, and it's these two we feed into merge?
+    sorted_left = mergesort(left_half) #gets the value from return line ***
+    sorted_right = mergesort(right_half)
+    
+    #Needs updating to sorted left and sorted right
+    return merge (sorted_left, sorted_right)
+def merge (left_half, right_half): #takes two sorted lists and produces a combined list, keeping the order
+    i = j = 0
+    merged = []
+    #while LH and RH have stuff in, this is a signal to do stuff
+    while i < len(left_half) and j < len(right_half): #changed, catches empty case
+        #Looping through a little more manually now
+        if left_half[i] < right_half[j]:
+            merged.append(left_half[i]) #this is at the back and needs to be at the front!
+            i += 1
+        else:
+        #EITHER WAY, MOVE THE SMALLEST ONE OUT
+            merged.append(right_half[j])
+            j += 1
+        #this will slowly remove things from LH RH
+        #does this lock in the length when it's initialised? I need to index only the 0 location at one point
+    #At this point, one half is empty (= 0)
+    merged.extend(left_half[i:]) #extend is like append but for many things (one by one)
+    merged.extend(right_half[j:])    
+    return merged 
+
+def median(input_list):
+    #lets use our nice code from a previous merge sort, kinda lazy though so will do it proper in a sec
+    sorted_list = mergesort(input_list)
+    """ 
+    walk through the steps mentally
+    we now have a sorted list of length(x)
+    we need to find the most middle
+    so if we half the length (lets say 8 or 9)
+    if it's 4 (so no reminder when divided by 2) then there is no middle!
+        we need to average position 3 and 5, so index 2 and 4
+    if the remainder when divided by 2 is 1 then it's odd and easy
+        index of len(list)/2 + 1 is the middle
+        return that
+
+
+    big brain idea, but can a sort be done as we find the median
+    something like a comparison, and if it is bigger than or smaller than,
+    something gets bumped and a new number becomes the focus and the middle    
+       """
+    
+    if len(sorted_list) % 2 == 1:
+        #odd
+        position = int((len(sorted_list)/2) + 1)
+        return sorted_list[position]
+    else:
+        #even
+        upper_position = int(len(sorted_list)/2)
+        lower_position = upper_position - 2
+        upper_num, lower_num = sorted_list[upper_position], sorted_list[lower_position]
+        av_num = (upper_num + lower_num) / 2
+        return av_num
+
+    
+
+print("Median list sort, odd:")
+print(median([1, 3, 1, 2, 6, 4, 2, 1, 4, 3, 5])) 
+print("Median list sort, even:")
+print(median([1, 3, 1, 2, 6, 4, 2, 1, 4, 5])) 
+print("Median on a len 4 list:")
+print(median([7, 8, 9 ,10])) #8.0, so clearly something wrong
+    
+""" 
+Apparently we were right with the big brain idea that we don't need a whole sort
+also // can be used to return a int, rather than / for a float
+
+we go again...
+
+    # not trying to sort the whole list remember
+    # we need to find a number in the list that has an equal amount greater and smaller
+    # a dictionary feels like a good idea? 
+    # the hard bit is at the end, we have another list of sorts of 'amount bigger' and 'amount smaller'
+    # forgetting what if they are all equal, eg [1 3 3 3]
+    # first lets use some design cases of [1 2 3 4 5] (3) and [6 7 8 9] (7.5)
+    # so 3 would have AB and AS as equal, therefore the answer
+    # 7 would have 2 AB and 1 AS, 8 1 AB and 2 AS, not seemingly useful
+    # 6 would have 3AB, 7 2AB, 8 1AB, 9 0AB, and we need to be at 1.5AB
+    # don't forget these are all usefully ordered
+    # could work through, find the highest and lowest each time and drop it
+    # eventually we'd have either 1 item left or 2 (but dropping would go to 0, so that's our answer)
+
+ """
+
+
+def median(input_list):
+
+
+
+
+    return True
