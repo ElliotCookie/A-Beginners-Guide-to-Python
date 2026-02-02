@@ -498,12 +498,39 @@ we go again...
     # could work through, find the highest and lowest each time and drop it
     # eventually we'd have either 1 item left or 2 (but dropping would go to 0, so that's our answer)
 
+
  """
 
 
 def median(input_list):
+    amount_bigger = []
+    count = 0
+    for item in input_list:
+        checking_item = item
+        for item2 in input_list:
+            if checking_item < item2:
+                count += 1
+        amount_bigger.append(count)
 
+    bigger_count = 0
+    lower_count = len(amount_bigger)
+    index_bigger = 0
+    index_lower = 0
+    
 
+    if len(amount_bigger) >= 3:
+        for item in amount_bigger:
+            loop_count = 0
+            if item > bigger_count:
+                bigger_count = item
+                index_bigger = loop_count
+            if lower_count < item:
+                lower_count = item
+                index_lower = loop_count
+        amount_bigger.pop(index_bigger)
+        amount_bigger.pop(index_lower)
+        
+    #check if it is 3, 2 or 1 and act accordingly
+    result = 0 # temp variable
 
-
-    return True
+    return result
