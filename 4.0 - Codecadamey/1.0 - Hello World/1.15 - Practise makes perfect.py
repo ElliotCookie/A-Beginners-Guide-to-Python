@@ -532,5 +532,24 @@ def median(input_list):
         
     #check if it is 3, 2 or 1 and act accordingly
     result = 0 # temp variable
+    #this already feels too long to be correct
 
     return result
+
+
+def median(input_list):
+    list_length = len(input_list)
+    
+    for checking_item in input_list:
+        # if n//2 values are bigger then it is the median (odd)
+        # if n//2 and n//2 straddle (even)
+        counter = 0
+        for other_item in input_list:
+            if checking_item > other_item:
+                counter += 1
+        if list_length // 2 == counter:
+            #it's the odd case, therefore:
+            return checking_item
+
+print("3rd median:")        
+print(median([3, 4, 7, 6, 5]))       
