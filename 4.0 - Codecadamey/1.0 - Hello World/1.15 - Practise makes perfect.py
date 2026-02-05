@@ -550,6 +550,11 @@ def median(input_list):
         if list_length // 2 == counter:
             #it's the odd case, therefore:
             return checking_item
+        elif list_length // 2 - 1 < counter and list_length //2 > counter:
+            #it's the even case
+            return (checking_item + other_item)/2
 
-print("3rd median:")        
+print("3rd median attempt:")        
 print(median([3, 4, 7, 6, 5]))       
+
+#not forgotten, still here
