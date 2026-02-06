@@ -539,22 +539,34 @@ def median(input_list):
 
 def median(input_list):
     list_length = len(input_list)
-    
     for checking_item in input_list:
         # if n//2 values are bigger then it is the median (odd)
         # if n//2 and n//2 straddle (even)
         counter = 0
+       
         for other_item in input_list:
             if checking_item > other_item:
                 counter += 1
-        if list_length // 2 == counter:
+
+        if list_length // 2 == counter and checking_item == input_list[list_length-1]:
             #it's the odd case, therefore:
             return checking_item
-        elif list_length // 2 - 1 < counter and list_length //2 > counter:
-            #it's the even case
-            return (checking_item + other_item)/2
+        else:
+            if list_length // 2 - 1 == counter:
+                lower_med = checking_item
+            if list_length // 2 == counter:
+                upper_med = checking_item
+
+    #even case happened...
+    return (lower_med + upper_med)/2
+
 
 print("3rd median attempt:")        
-print(median([3, 4, 7, 6, 5]))       
+print(median([3, 4, 7, 6, 5]))     
+print(median([31, 42, 78, 69, 57]))     
+print(median([57, 31, 42, 78, 69]))  
+print(median([4, 7, 6, 5])) 
+print(median([40, 72, 63, 51])) 
+print(median([51, 40, 72, 63])) 
 
 #not forgotten, still here
