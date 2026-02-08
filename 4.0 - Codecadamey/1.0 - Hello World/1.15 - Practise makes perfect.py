@@ -569,4 +569,62 @@ print(median([4, 7, 6, 5]))
 print(median([40, 72, 63, 51])) 
 print(median([51, 40, 72, 63])) 
 
-#not forgotten, still here
+
+def median(input_list):
+    lower_half= []
+    upper_half = []
+
+    for item in input_list:
+        if lower_half[0] == "":
+            lower_half.append(item)
+        else:
+            if item > max(lower_half):
+                upper_half.append(item)
+            
+
+
+""" 
+
+
+        # STEP 2: rebalance the heaps
+        #
+        # Invariant we must maintain:
+        #
+        #   size(LOWER) == size(UPPER)
+        #       OR
+        #   size(LOWER) == size(UPPER) + 1
+        #
+        # LOWER is allowed to have ONE extra element
+        # but UPPER is never allowed to be bigger.
+
+        if size(LOWER) > size(UPPER) + 1:
+            # LOWER is too big
+            # move its largest element across the boundary
+            move max(LOWER) into UPPER
+
+        else if size(UPPER) > size(LOWER):
+            # UPPER is too big
+            # move its smallest element across the boundary
+            move min(UPPER) into LOWER
+
+
+        # At this point:
+        #   - all values in LOWER <= all values in UPPER
+        #   - heaps are balanced
+
+
+    # STEP 3: compute the median from the heaps
+    #
+    # If both heaps are the same size:
+    #   median is the average of the two boundary values
+    #
+    # If LOWER has one extra value:
+    #   median is simply its maximum
+
+    if size(LOWER) == size(UPPER):
+        return ( max(LOWER) + min(UPPER) ) / 2
+
+    else:
+        return max(LOWER)
+
+ """
