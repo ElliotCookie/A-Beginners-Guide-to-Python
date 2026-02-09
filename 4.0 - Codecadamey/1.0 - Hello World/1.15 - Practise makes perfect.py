@@ -581,36 +581,19 @@ def median(input_list):
             if item > max(lower_half):
                 upper_half.append(item)
             
+        if len(lower_half) > len(upper_half) + 1:
+            max_in_lower = max(lower_half)
+            upper_half.append(max_in_lower)
+            lower_half.pop(max_in_lower)
+        elif len(upper_half) > len(lower_half):
+            min_in_upper = min(upper_half)
+            lower_half.append(min_in_upper)
+            upper_half.pop(min_in_upper)
+        # heaps are balanced, everything in lower is lower than everything in upper
 
 
 """ 
 
-
-        # STEP 2: rebalance the heaps
-        #
-        # Invariant we must maintain:
-        #
-        #   size(LOWER) == size(UPPER)
-        #       OR
-        #   size(LOWER) == size(UPPER) + 1
-        #
-        # LOWER is allowed to have ONE extra element
-        # but UPPER is never allowed to be bigger.
-
-        if size(LOWER) > size(UPPER) + 1:
-            # LOWER is too big
-            # move its largest element across the boundary
-            move max(LOWER) into UPPER
-
-        else if size(UPPER) > size(LOWER):
-            # UPPER is too big
-            # move its smallest element across the boundary
-            move min(UPPER) into LOWER
-
-
-        # At this point:
-        #   - all values in LOWER <= all values in UPPER
-        #   - heaps are balanced
 
 
     # STEP 3: compute the median from the heaps
