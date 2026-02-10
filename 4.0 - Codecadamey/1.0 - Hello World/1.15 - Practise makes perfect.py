@@ -575,39 +575,50 @@ def median(input_list):
     upper_half = []
 
     for item in input_list:
-        if lower_half[0] == "":
-            lower_half.append(item)
+        if not lower_half: # therefore it's empty
+            lower_half.append(item) # item goes in lower heap
         else:
             if item > max(lower_half):
                 upper_half.append(item)
+            else: # this is important, so that all the small values end up somewhere!
+                lower_half.append(item)
             
         if len(lower_half) > len(upper_half) + 1:
             max_in_lower = max(lower_half)
             upper_half.append(max_in_lower)
-            lower_half.pop(max_in_lower)
+            lower_half.remove(max_in_lower) # use REMOVE, not POP. Found this in: https://docs.python.org/3/tutorial/datastructures.html !
         elif len(upper_half) > len(lower_half):
             min_in_upper = min(upper_half)
             lower_half.append(min_in_upper)
-            upper_half.pop(min_in_upper)
+            upper_half.remove(min_in_upper) 
         # heaps are balanced, everything in lower is lower than everything in upper
 
-
-""" 
-
-
-
-    # STEP 3: compute the median from the heaps
-    #
-    # If both heaps are the same size:
-    #   median is the average of the two boundary values
-    #
-    # If LOWER has one extra value:
-    #   median is simply its maximum
-
-    if size(LOWER) == size(UPPER):
-        return ( max(LOWER) + min(UPPER) ) / 2
-
+    if len(lower_half) == len(upper_half):
+        #even, therefore the average
+        return (max(lower_half) + min(upper_half)) / 2
     else:
-        return max(LOWER)
+        #odd
+        return max(lower_half)
 
- """
+print("4th median attempt:") # deleted the easy trials      
+print(median([55, 34, 42, 78, 69]))  
+print(median([2, 7, 6, 5])) 
+print(median([41, 78, 62, 58])) 
+print(median([59, 46, 78, 64])) 
+print(median([4, 5, 5, 4]))
+
+
+# they use a sort (cheating!)
+
+def median(lst):
+    sorted_list = sorted(lst)
+    if len(sorted_list) % 2 != 0:
+        #odd number of elements
+        index = len(sorted_list)//2 
+        return sorted_list[index]
+    elif len(sorted_list) % 2 == 0:
+        #even no. of elements
+        index_1 = len(sorted_list)/2 - 1
+        index_2 = len(sorted_list)/2
+        mean = (sorted_list[index_1] + sorted_list[index_2])/2.0
+        return mean
