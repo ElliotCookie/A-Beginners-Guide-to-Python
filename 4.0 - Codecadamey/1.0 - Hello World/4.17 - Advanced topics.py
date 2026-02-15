@@ -55,6 +55,49 @@ print (to_five[::2] )# print ['A', 'C', 'E']
 # Default end is end of list
 # Default stride is 1
 
-my_list = []
+my_list = range(1, 11) # List of numbers 1 - 10
+# slice it to print odd numbers only
+print("Printing odd numbers...")
+print(my_list[::2]) # but appears as: range(1, 11, 2)
+# Looked this up, this is because range(1,11) is start = 1, stop = 11, step = 1
+# it doesn't store say [1, 2, 3, etc]
+# the way to get around this is to call it as a list
+print(list(my_list[::2])) #[1, 3, 5, 7, 9] (LIST is key)
+
+#I'm also thinking that if we set it up differently (maybe using a comprehension!) it will work
+nums_onetoten = [x for x in range (1, 11)]
+print("Trying new assembly of the above...")
+print(nums_onetoten[::2]) # [1, 3, 5, 7, 9]
 
 
+
+
+
+# 9 / 18 - Reversing a list using negative stride, reverse list
+backwards = my_list[::-1]
+print("Printing backwards...")
+print(list(backwards[::2]))
+
+
+
+
+# 10 / 18 - Stride length, list traversal
+to_one_hundred = range(101)
+backwards_by_tens = to_one_hundred[::-10]
+print("Backwards by tens challenge...")
+print(list(backwards_by_tens))
+
+
+
+
+# 11 / 18 - Final challenge 
+print("Final challenge")
+
+to_21 = [x for x in range(1,22)] # go one above each time
+odds = to_21[::2]
+lower_third, upper_third = int(len(to_21) * 1//3), int(len(to_21) * 2//3) # use // integer division and not / float division
+middle_third = to_21[lower_third:upper_third:]
+
+print(list(to_21))
+print(list(odds))
+print(list(middle_third))
