@@ -101,3 +101,35 @@ middle_third = to_21[lower_third:upper_third:]
 print(list(to_21))
 print(list(odds))
 print(list(middle_third))
+
+
+
+# 12 / 18 - Anonymous functions
+# Python allows for 'functional programming' which means that functions can be parsed as variables
+# This is quite powerful - not every language does this!
+# Example:
+lambda x: x % 3 == 0 # this is the ANYONYMOUS part, it doesn't have a name!
+# is the same as 
+def by_three(x):
+  return x % 3 == 0
+
+my_list = range(16)
+# filter is another keyword introduced here, which isn't useful
+print (filter(lambda x: x % 3 == 0, my_list))
+
+
+# the basic format of filter is filter(function, iterable)
+print("working out what filter does")
+numbers = range(16)
+result = (filter(by_three, numbers))
+print(list(numbers))
+print(list(result))
+# so by this logic we could compound it for the printing only
+print(list(filter(by_three, numbers)))
+
+def not_multiple_four(x):
+   return x % 4 != 0
+print(list(filter(not_multiple_four, numbers)))
+# Notice it is not function(x), this is because filter is it's own function
+
+# List comprehensions are favourable, if you can
