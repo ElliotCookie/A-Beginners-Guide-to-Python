@@ -132,4 +132,25 @@ def not_multiple_four(x):
 print(list(filter(not_multiple_four, numbers)))
 # Notice it is not function(x), this is because filter is it's own function
 
-# List comprehensions are favourable, if you can
+# List comprehensions are favourable over mabdas, if you can
+
+
+
+
+# 13 / 18 - Lambda functions, lambda syntax
+
+# best for when you need a quick one, not one you will use many times (then use def:)
+languages = ["HTML", "JavaScript", "Python", "Ruby"]
+
+# Add arguments to the filter()
+print (list(filter(lambda x: x == "Python", languages))) # ['Python']
+print (next(filter(lambda x: x == "Python", languages)), None) # Python
+# next is used to give the first thing it finds, so best used with a error catch
+
+# next is useful to just quickly grab the first thing, so first line of a text file
+# or to store the first row of an interable (headers) so you can read the data below
+
+
+
+
+
