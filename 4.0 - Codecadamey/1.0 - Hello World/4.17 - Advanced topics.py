@@ -154,3 +154,21 @@ print (next(filter(lambda x: x == "Python", languages)), None) # Python
 
 
 
+# 14 / 18 - testing lambda stuff, and list comprehensions
+
+print("Squares list comp test...")
+squares = [x**2 for x in range(1, 11)]
+print(squares)
+print("filtering this a bit...")
+print(list(filter(lambda x: 30<x<70, squares)))
+
+
+
+# 15 / 18 - iterating over dictionaries
+movies = {
+  "Monty Python and the Holy Grail": "Great",
+  "Monty Python's Life of Brian": "Good",
+  "Monty Python's Meaning of Life": "Okay"
+}
+# let's not forget items(), values() and keys()
+print(movies.items())
