@@ -172,3 +172,12 @@ movies = {
 }
 # let's not forget items(), values() and keys()
 print(movies.items())
+
+
+
+
+# 16/ 18 - List comprehensions practise
+print("list of multiples of 3 and 5 in between 1 and 15")
+threes_and_fives = [x for x in range (1, 16) if x % 3 == 0 or x % 5 == 0]
+print(threes_and_fives) #[False, False, True, False, True]
+# the IF is very important
