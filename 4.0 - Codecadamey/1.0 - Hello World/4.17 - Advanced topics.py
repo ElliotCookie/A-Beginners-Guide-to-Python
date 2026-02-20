@@ -179,5 +179,44 @@ print(movies.items())
 # 16/ 18 - List comprehensions practise
 print("list of multiples of 3 and 5 in between 1 and 15")
 threes_and_fives = [x for x in range (1, 16) if x % 3 == 0 or x % 5 == 0]
-print(threes_and_fives) #[False, False, True, False, True]
-# the IF is very important
+print(threes_and_fives) 
+# the IF is very important, and changes a) to b)
+# a) [False, False, True, False, True]
+# b) [3, 5, 6, 9, 10, 12, 15]
+
+
+
+
+
+# 17 / 18 - List slicing
+print("deciphering a message using slicing...")
+# The message is backwards and we only want every other letter
+garbled = "!XeXgXaXsXsXeXmX XtXeXrXcXeXsX XeXhXtX XmXaX XI"
+# From memory, we have [start:finish:step]
+# It is a string, so an effective list of chars
+reformatted = garbled[len(garbled):0:-2]
+print(reformatted)
+# I had :0: in the middle, but this missed the "!"
+reformatted = garbled[::-2]
+print(reformatted)
+
+
+
+
+# 18 / 18 - Lamda expressions
+print("Deciphering using lamda functions...")
+garbled = "IXXX aXXmX aXXXnXoXXXXXtXhXeXXXXrX sXXXXeXcXXXrXeXt mXXeXsXXXsXaXXXXXXgXeX!XX"
+# create a filter to remove X
+message = (lambda x: x != "X", garbled)
+print(message)
+# WRONG - [<function <lambda> at 0x0000019AB124C0E0>, 'IXXX aXXmX aXXXnXoXXXXXtXhXeXXXXrX sXXXXeXcXXXrXeXt mXXeXsXXXsXaXXXXXXgXeX!XX']
+message = filter(lambda x: x != "X", garbled)
+print(message)
+# WRONG - <filter object at 0x000002148DF035B0>
+message = list(filter(lambda x: x != "X", garbled))
+print(message)
+# ['I', ' ', 'a', 'm', ' ', 'a', 'n', 'o', 't', 'h', 'e', 'r', ' ', 's', 'e', 'c', 'r', 'e', 't', ' ', 'm', 'e', 's', 's', 'a', 'g', 'e', '!']
+message = "".join(list(filter(lambda x: x != "X", garbled)))
+print(message)
+# I am another secret message!
+# This took some undocumented tries... # printing lists, joining lists
