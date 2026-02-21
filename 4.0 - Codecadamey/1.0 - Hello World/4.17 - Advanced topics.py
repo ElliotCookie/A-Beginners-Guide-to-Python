@@ -220,3 +220,4 @@ message = "".join(list(filter(lambda x: x != "X", garbled)))
 print(message)
 # I am another secret message!
 # This took some undocumented tries... # printing lists, joining lists
+#Finished!
