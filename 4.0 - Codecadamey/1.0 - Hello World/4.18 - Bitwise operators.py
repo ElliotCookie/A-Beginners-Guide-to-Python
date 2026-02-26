@@ -86,3 +86,6 @@ shift_right >> 2 == 0b11
 
 print (bin(shift_right))
 print (bin(shift_left))
+
+
+# rushing today, but still here!
