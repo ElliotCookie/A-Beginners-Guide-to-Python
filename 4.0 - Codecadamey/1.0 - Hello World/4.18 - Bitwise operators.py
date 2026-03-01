@@ -81,11 +81,30 @@ shift_right = 0b1100
 shift_left = 0b1
 
 # Your code here!
+shift_right >> 2 == 0b11 #this would be a boolean, not the operation
 shift_left << 2 == 0b100
-shift_right >> 2 == 0b11 
+
+
+shift_right = 0b1100
+shift_left = 0b1
+shift_right = shift_right >> 2
+shift_left = shift_left << 2
+
 
 print (bin(shift_right))
 print (bin(shift_left))
 
 
-# rushing today, but still here!
+# 7 / 14 - the & operator, AND
+# at most, it can be the smaller of the two values
+# finds all the turned on 1's in common
+
+""" 0 & 0 = 0
+0 & 1 = 0
+1 & 0 = 0
+1 & 1 = 1
+0b111 (7) & 0b1010 (10) = 0b10 
+print out the result of calling bin() on 0b1110 & 0b101."""
+print("Printing bin on the AND operator...")
+print(bin(0b1110 & 0b101)) # 0b100
+# this is because the first 1 is both a 1, and all the others are OR's, so 0
