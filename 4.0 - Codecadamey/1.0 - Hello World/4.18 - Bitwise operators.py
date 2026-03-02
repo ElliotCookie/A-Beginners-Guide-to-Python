@@ -108,3 +108,40 @@ print out the result of calling bin() on 0b1110 & 0b101."""
 print("Printing bin on the AND operator...")
 print(bin(0b1110 & 0b101)) # 0b100
 # this is because the first 1 is both a 1, and all the others are OR's, so 0
+
+
+
+
+
+
+
+
+
+# 8 / 14 - The bitwise OR (|) operator 
+""" 
+The same as above, but only true when different:
+0 | 0 = 0
+0 | 1 = 1 
+1 | 0 = 1
+1 | 1 = 1
+ """
+print("Doing the or thing with |...")
+print((0b1110 | 0b101))
+print(bin(0b1110 | 0b101)) # the bin allows us to stay in 0b notation
+
+
+
+
+
+
+
+# 9 / 14 - The XOR (^) or exclusive or operator
+# works like an OR, but returns false if both true 
+""" 
+0 ^ 0 = 0
+0 ^ 1 = 1
+1 ^ 0 = 1
+1 ^ 1 = 0
+"""
+print("Doing the XOR function with ^...")
+print(bin(0b1110 ^ 0b101)) # rejected this solution for the extra brackets needed in Py3
