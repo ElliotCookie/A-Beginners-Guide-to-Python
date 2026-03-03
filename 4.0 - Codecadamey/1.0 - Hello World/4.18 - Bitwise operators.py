@@ -145,3 +145,6 @@ print(bin(0b1110 | 0b101)) # the bin allows us to stay in 0b notation
 """
 print("Doing the XOR function with ^...")
 print(bin(0b1110 ^ 0b101)) # rejected this solution for the extra brackets needed in Py3
+
+
+# 10 / 14 - The NOT operator, ~
