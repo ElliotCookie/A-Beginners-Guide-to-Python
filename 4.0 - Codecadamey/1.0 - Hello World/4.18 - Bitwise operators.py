@@ -147,4 +147,22 @@ print("Doing the XOR function with ^...")
 print(bin(0b1110 ^ 0b101)) # rejected this solution for the extra brackets needed in Py3
 
 
+
+
 # 10 / 14 - The NOT operator, ~
+# ~ 1 == 0 
+# it just flips the binary value
+
+
+
+
+
+# 11 / 14 - The man behind the bit mask
+""" num  = 0b1100
+mask = 0b0100
+desired = num & mask
+if desired > 0:
+  print "Bit was on" """
+# we have used mask as a dummy variable to check against
+
+
