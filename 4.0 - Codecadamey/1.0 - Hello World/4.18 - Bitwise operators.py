@@ -165,4 +165,13 @@ if desired > 0:
   print "Bit was on" """
 # we have used mask as a dummy variable to check against
 
+def check_bit4(integer):
+    mask = 0b1000
+    if integer & mask > 0: # this means the fourth digit from the left is a 1
+        return "on"
+    else:
+        return "off"
 
+print("Checking bit four...")    
+print(check_bit4(0b11001))    
+print(check_bit4(0b011))    
