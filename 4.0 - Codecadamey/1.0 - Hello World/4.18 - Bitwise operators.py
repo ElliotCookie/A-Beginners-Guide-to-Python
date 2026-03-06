@@ -175,3 +175,13 @@ def check_bit4(integer):
 print("Checking bit four...")    
 print(check_bit4(0b11001))    
 print(check_bit4(0b011))    
+
+
+
+# 12 / 14 - "Turning it on" - using the OR operator
+# We have to turn the third digit on
+print("Turning it on...")
+a = 0b10111011
+third_on = 0b100
+switched =  a | third_on
+print(bin(switched)) 
