@@ -90,9 +90,9 @@ shift_left = 0b1
 shift_right = shift_right >> 2
 shift_left = shift_left << 2
 
-
-print (bin(shift_right))
-print (bin(shift_left))
+print("Shifting left and right")
+print (bin(shift_right)) #0b11
+print (bin(shift_left)) #0b100
 
 
 # 7 / 14 - the & operator, AND
@@ -185,3 +185,110 @@ a = 0b10111011
 third_on = 0b100
 switched =  a | third_on
 print(bin(switched)) 
+
+
+
+
+
+
+
+# 13 / 14 - Flipping out with the XOR
+# The challenge is to flip all the bits, I think it might be similar to the above
+print("Flipping bits...")
+a = 0b11101110
+mask = 0b1 # we can see the first digit is a 0
+flipped =  mask ^ a # swapped them around this time?
+print(flipped) # 239
+print(bin(flipped)) # 0b11101111
+
+# sort of correct idea, remember 
+""" 
+0 ^ 0 = 0
+0 ^ 1 = 1
+1 ^ 0 = 1
+1 ^ 1 = 0
+"""
+# what this means is that anyhing with a 1 in it will always be flipped (even 2 no 1's)
+new_mask = 0b111111111111111
+#undo the order swap
+new_flipped = a ^ new_mask
+print(bin(new_flipped))
+
+# but this is too long now, we've added value to the number
+# use a list comprehension to create the mask
+
+# print(len(a)) - this cannot be done, as a is an int
+# lets just make it a string then
+
+print(len(str(a))) # 3 - so all the 1's and 0's are registered as 1 char
+# could then break down the bin(a) into say 64, then 32, then 16 etc
+# this would then err for numbers >= 128, must be a better way
+print(len(bin(a)) - 2)
+
+a = 0b11101110 # 8 chars
+def flipper(flip_me):
+    print("Entered flip me function")
+    no_of_ones_required = len(bin(flip_me)[2:])
+    mask_setup = "1" * no_of_ones_required
+    mask = int(mask_setup,2)
+    pre_bin = flip_me ^ mask
+    flipped = bin(pre_bin)
+    # aha! diagnosed it is knocking off the extra 0's as these have no value
+    # that is why the output isn't 8 chars, we have lost the 3 leading 0's
+    return flipped
+
+print(flipper(a)) #outputs, 0b10001, 5 chars
+
+
+
+a = 0b11101110 
+
+def flipper_function(to_be_flipped):
+    print("___ Entered flipper funciton ___") # Here for debugging
+    length_incoming = len(bin(to_be_flipped)[2:]) # takes '0b11101110', looks from 2: onwards, coutns this len
+    mask = "1" * int(length_incoming) # uses the binary len to create a mask of the correct length (of 1's)
+    return bin(to_be_flipped ^ int(mask, 2)) # returns input, against (^) mask, all in binary
+
+print(flipper_function(a))
+
+# now looking at refinements
+# there is a built in tool to measure length, .bit_length
+# to_be_flipped.bit_length() will give us a value of 10, one imagines
+
+# knowing how many bits our number has, we can look to use bit shifts
+# if we shift 1 left by (no of bits, chars), you get (e.g.) 100000
+# taking off 1 from this, would then give us (e.g) 011111...... which is a nice mask!
+
+a = 0b11101110 
+def flipper_function2(to_be_flipped):
+    print("____ Refined flipping function _____")
+    bits = to_be_flipped.bit_length()
+    mask = (1 << bits) - 1
+    pre_bin = to_be_flipped ^ mask # I was using bits and not TBF, hence getting an error
+    return bin(pre_bin)
+
+print(flipper_function2(a))   
+
+
+
+
+# Final try, nice and refined now
+a = 0b11101110 
+def flipper_function2(to_be_flipped):
+    print("____ Refined refined flipping function _____")
+    bits = to_be_flipped.bit_length() # returns 8, thanks to that handy function
+    mask = (1 << bits) - 1 # 1 shifted becomes 9 bits, less 1 is 8 bits, all 1's    (really good logic hack)
+    return bin(to_be_flipped ^ mask) # 
+
+print(flipper_function2(a))   
+
+
+# I just think it would be funny on one line
+
+a = 0b11101110 
+
+def flipper_function2(to_be_flipped):
+    print("______ Refined refined refined flipping function _______")
+    return bin(to_be_flipped ^ ((1 << to_be_flipped.bit_length()) - 1))
+
+print(flipper_function2(a))   
