@@ -292,3 +292,19 @@ def flipper_function2(to_be_flipped):
     return bin(to_be_flipped ^ ((1 << to_be_flipped.bit_length()) - 1))
 
 print(flipper_function2(a))   
+
+
+# 14 / 14 - You've got to be kidding me, I quote
+#"Finally, you can also use the left shift (<<) and right shift (>>) operators to slide masks into place."
+
+bit = 0b110
+position = 1
+
+def flip_bit(number, n):
+    mask = 0b1 << n-1 
+    result = number ^ mask
+    return (bin(result))
+
+print(flip_bit(bit, position))
+print(flip_bit(9, 1))
+print(flip_bit(15, 2))
