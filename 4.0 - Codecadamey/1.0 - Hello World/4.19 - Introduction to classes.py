@@ -55,3 +55,53 @@ print(double_this_number(10))
 
 
 # 1 / 18 - Why use classes?
+class Fruit(object):
+  """A class that makes various tasty fruits."""
+
+  # This is the constructor and runs when an object is created
+  # e.g. lemon = Fruit("lemon", "yellow", "sour", False)
+  # We will come on to creating a class but not populating it with data I am sure
+  def __init__(self, name, color, flavor, poisonous):
+    # self is the actual object instance, and lets us refer to specific items
+    # self is not a keyword but the community uses it as the current instance 
+    self.name = name
+    self.color = color
+    self.flavor = flavor
+    self.poisonous = poisonous
+  # without init, we'd have to do:
+  # lemon = fruit()
+  # lemon.name = "lemon"
+  # lemon.color = "red"
+  # Not only is this untidy, but it prevents us forgetting things and makes sure set up is correct
+
+  # There is a way to help reading when initiating classes:
+  # def __init__(self, name: str, color: str, flavor: str, poisonous: bool):
+
+
+  def description(self):
+    print ("I'm a %s %s and I taste %s." % (self.color, self.name, self.flavor))
+
+  def is_edible(self):
+    if not self.poisonous: # accessing an attribute, not calling a function
+      print ("Yep! I'm edible.")
+    else:
+      print ("Don't eat me! I am super poisonous.")
+
+lemon = Fruit("lemon", "yellow", "sour", False)
+lemon.description()
+lemon.is_edible()
+
+
+
+
+# 2 / 18 - Class syntax
+# Pass is a useful keyword where you're expecting to put in an expression later 
+
+class Animal(object):
+   # Note that using (Object) is python 2 formatting, you can miss the brackets for now
+
+   # Python will use the first parameter that __init__() receives to refer to the object being created; 
+   # this is why it’s often called self, since this parameter gives the object being created its identity.
+   def __init__(self, name):
+      self.name = name
+      pass
