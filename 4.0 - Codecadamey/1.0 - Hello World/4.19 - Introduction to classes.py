@@ -106,4 +106,35 @@ class Animal(object):
       self.name = name
       pass
 
-# more code, not forgetting!
+# We'e skipped 3 - 4 from just pressing 'run code' 
+# 5 / 18 - Instantiating out first class
+
+zebra = Animal("Jeffrey") # Parsing Jeffrey
+print(zebra.name) #Jeffrey
+
+# I really love the 'pass' keyword btw
+
+
+
+
+
+# 6 / 18 - The first argument __init__() gets is used to refer to the instance object, 
+# and by convention, that argument is called self.
+
+# add a 3rd attribute to Animal below
+
+class Animal(object):
+  """Makes cute animals."""
+  # For initializing our instance objects
+  def __init__(self, name, age, is_hungry):
+    self.name = name
+    self.age = age
+    self.is_hungry = is_hungry
+
+zebra = Animal("Jeffrey", 2, True)
+giraffe = Animal("Bruce", 1, False)
+panda = Animal("Chad", 7, True)
+
+print (zebra.name, zebra.age, zebra.is_hungry)
+print (giraffe.name, giraffe.age, giraffe.is_hungry)
+print (panda.name, panda.age, panda.is_hungry)
