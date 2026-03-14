@@ -143,4 +143,28 @@ print (panda.name, panda.age, panda.is_hungry)
 
 
 
-# 7 / 18 - still here!
+# 7 / 18 - Scope of variables
+
+print("Scope of variables")
+class Animal(object):
+  """Makes cute animals."""
+  is_alive = True
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+zebra = Animal("Jeffrey", 2)
+giraffe = Animal("Bruce", 1)
+panda = Animal("Chad", 7)
+
+print (zebra.name, zebra.age, zebra.is_alive) #Jeffrey 2 True
+print (giraffe.name, giraffe.age, giraffe.is_alive)
+print (panda.name, panda.age, panda.is_alive)
+
+# the takeaway is that we define is_alive in the function and can therefore pull it
+# but as we know, not everything is global...
+
+
+
+
+# 8 / 18 - Methods (functions but within a class)
