@@ -168,3 +168,45 @@ print (panda.name, panda.age, panda.is_alive)
 
 
 # 8 / 18 - Methods (functions but within a class)
+# Adding our own method to the below:class Animal(object):
+print("Adding our own method.....")
+
+class Animal(object):
+  """Makes cute animals."""
+  is_alive = True
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  # Add your method here!
+  """   def description(): # trying without parsing first 
+    print(self.name, self.age) # tried without the self. and it didn't like it """
+  def description(self):
+    print(self.name, self.age)
+  
+  #I need to somehow call the description method
+
+hippo = Animal("Jeff", 17)
+#hippo.description # not this
+hippo.description() 
+
+#hippo = Animal.description("Bob", 12) # okay this is it, or this prints at least
+#lets check if it has been initialised as an object properly
+#print(hippo.name) # okay this error, which is weird, as I thought it would at least be Jeff
+#try again but move it lower
+hippo = Animal("Charlie", 19)
+print(hippo.name) # so this is initialised properly
+# lets try this
+#Animal.description(hippo) # okay this is missing the age argument, taking line out as errors
+
+# I've added self to the function, taking out bob line now
+# okay that doesn't work, reverting
+# adding self into the description method again
+# ahh, and then taking away name and age
+
+
+#SOLUTION
+hippo = Animal("Elliot", 8)
+hippo.description() #behind the scenes this is: Animal.description(hippo)
+# so therefore self becomes hippo, self = hippo as it's the current object
+# self doesn't parse data, it's almost a key to say "this is the hippo instance"
+# then hippo.name would find the hippo instance and find the name within that, only when called
