@@ -210,3 +210,36 @@ hippo.description() #behind the scenes this is: Animal.description(hippo)
 # so therefore self becomes hippo, self = hippo as it's the current object
 # self doesn't parse data, it's almost a key to say "this is the hippo instance"
 # then hippo.name would find the hippo instance and find the name within that, only when called
+
+
+
+# 9 / 18 - Member variables, ones that are available to all members of a class 
+print("Member variables...")
+cat = Animal("Boots", 3)
+print (hippo.is_alive) # printing out true, the default value
+hippo.is_alive = False # setting it to false
+print (hippo.is_alive) # printing it as proof
+print (cat.is_alive) # proof that we only changed Hippo, not Cat (morbid btw)
+
+
+class Animal(object):
+  """Makes cute animals."""
+  is_alive = True
+  health = "Good" 
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  # Add your method here!
+  def description(self):
+    print(self.name)
+    print(self.age)
+
+hippo = Animal("Elliot", 8)
+sloth = Animal("ben", 47)
+ocelot = Animal("Zeus", 2)
+
+print(hippo.health)
+print(sloth.health)
+print(ocelot.health)
+
+# rejected over my solution as I spelt Good with a G, not a g
