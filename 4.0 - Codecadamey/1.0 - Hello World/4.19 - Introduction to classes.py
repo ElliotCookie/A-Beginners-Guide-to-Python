@@ -303,3 +303,46 @@ class ReturningCustomer(Customer):
 monty_python = ReturningCustomer("ID: 12345")
 monty_python.display_cart()
 monty_python.display_order_history()
+
+
+
+
+# 12 / 18 - Inheritance syntax
+# syntax is:
+# class DerivedClass(BaseClass):
+print("Inheritance with shape classes")
+
+class Shape(object):
+  """Makes shapes!"""
+  def __init__(self, number_of_sides):
+    self.number_of_sides = number_of_sides
+
+# Add your Triangle class below!
+class Triangle(Shape):
+  def __init__(self, side1, side2, side3):
+    super().__init__(3) #added this back in
+    self.side1 = side1
+    self.side2 = side2
+    self.side3 = side3
+
+
+# print(Triangle.number_of_sides)    # this one errors
+
+#wrong
+""" t = Triangle(3)
+print(t.number_of_sides)    # this also errors """
+
+#wrong
+""" t = Triangle(1,2,4)
+t.Shape.__init__(3) """
+
+# also wrong
+""" t=Triangle((Shape,3), 3, 4, 5) """
+
+
+# right, I did have it basically, it was the super() I was missing
+t = Triangle(3, 4, 5)
+print(t.number_of_sides)
+
+# the way without the super clause is 
+Shape.__init__(t, 3) # so I was actually close on line 337
