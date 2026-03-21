@@ -346,3 +346,35 @@ print(t.number_of_sides)
 
 # the way without the super clause is 
 Shape.__init__(t, 3) # so I was actually close on line 337
+
+
+
+
+
+
+# 13 / 18 - Overriding methods and attributes
+# When you want a new class to take something on, but re-define it
+
+class Employee(object): # objectively a hilarious line, (object is legacy from Py 2 btw)
+  """Models real-life employees!"""
+  def __init__(self, employee_name):
+    self.employee_name = employee_name
+
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return hours * 20.00
+
+# Add your code below!
+class PartTimeEmployee(Employee):
+    def calculate_wage(self, hours):
+      self.hours = hours
+      return hours * 12.00
+    
+e1023 = Employee("Bob") # numbers are values, not containers, so need the 'e'
+print(e1023.employee_name)
+print("And this should print their wage...")
+print(e1023.calculate_wage(40)) #800.0
+
+e2059 = PartTimeEmployee("Charlie")
+print(e2059.employee_name)
+print(int(e2059.calculate_wage(20))) #240
