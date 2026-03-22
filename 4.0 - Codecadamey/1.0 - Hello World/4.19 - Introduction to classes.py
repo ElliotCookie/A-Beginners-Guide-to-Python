@@ -378,3 +378,28 @@ print(e1023.calculate_wage(40)) #800.0
 e2059 = PartTimeEmployee("Charlie")
 print(e2059.employee_name)
 print(int(e2059.calculate_wage(20))) #240
+
+
+
+# 14 / 18 - Exploring the use of Super
+# how it has been sold is that it can be used at any time 
+# and allows the derived class can have a method or attribute 'reset'
+# terminology is base class or superclass btw
+
+print("amending our part time employee class...")
+class PartTimeEmployee(Employee):
+    def calculate_wage(self, hours):
+      self.hours = hours
+      return hours * 12.00
+    
+    def full_time_wage(self, hours):
+      return super().calculate_wage(hours)
+
+milton = PartTimeEmployee("Milton")
+print("Full time equivalent rate is... ")
+print(milton.full_time_wage(10))
+
+
+# super() is important as when you have a chain of classes, it just jumps up once
+# hard coding above might not be what you actually want
+# it's changed between Py 2 and Py 3 to become much simpler btw
