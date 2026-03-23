@@ -401,5 +401,57 @@ print(milton.full_time_wage(10))
 
 
 # super() is important as when you have a chain of classes, it just jumps up once
-# hard coding above might not be what you actually want
+# hard coding above might not be what you actually want]
+
 # it's changed between Py 2 and Py 3 to become much simpler btw
+
+
+# 15 / 18 - Making out own class (again)
+print("15/18...")
+class Triangle(): # don't forget (object) if in Python 2
+  print("For debugging, you have entered the Triangle class")
+
+  number_of_sides = 3 # 16 / 18
+
+  def __init__(self, angle1, angle2, angle3):
+    self.angle1 = angle1
+    self.angle2 = angle2
+    self.angle3 = angle3
+
+  def check_angles(angle1, angle2, angle3):
+    if((angle1+angle2+angle3) == 180): return True
+    return False
+  
+  def self_check_angles(self, angle1, angle2, angle3):
+    if((self.angle1+self.angle2+self.angle3) == 180): return True
+    return False
+  
+  def self2_check_angles(self):
+    if((self.angle1+self.angle2+self.angle3) == 180): return True
+    return False
+  
+  
+
+
+# 16 / 18 - adding a member variable and method
+# this is to the Triangle class below
+
+print("Checking out our new check angle function...")
+print(Triangle.check_angles(90, 90, 90))
+print(Triangle.check_angles(90, 90, 0))
+
+# look how neat that is! And correct first try, this is absolutely progress
+# although I did set it up the wrong way round but did notice the error
+# obviously Codeacademy didn't like my answer, they even used an "else"!
+
+
+# 17 / 18 - getting personal, making my own one
+print("17/18...")
+my_triangle = Triangle(90, 30, 60)
+print(my_triangle.number_of_sides)
+#print(my_triangle.check_angles())
+#print(my_triangle.self_check_angles(my_triangle))
+print(my_triangle.self2_check_angles())
+
+# okay, I think we learned something there
+# by parsing self, you give the function acess to all the vars in that instance
