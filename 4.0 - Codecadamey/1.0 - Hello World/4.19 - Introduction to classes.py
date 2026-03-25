@@ -472,3 +472,4 @@ class Equilateral(Triangle):
 
 e = Equilateral(0,0,0)
 print(e.angle1) #60
+
