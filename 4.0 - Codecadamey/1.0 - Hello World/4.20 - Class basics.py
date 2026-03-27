@@ -6,6 +6,9 @@ class Car(): # don't forget (object) in py 2
         self.colour = colour # obviously the solution was rejected for this
         self.mpg = mpg
 
+    def return_beans():
+        return "beans" 
+
 my_car = Car("DeLorean", "silver", 88)
 
 # 2/ 11 - creating an instance of the object
@@ -25,3 +28,25 @@ print("Checking instance variables have worked...")
 print(my_car.mpg)
 
 # solution rejected for using colour over color
+
+
+# 6 / 11 - Printing those new varibales we have made
+print(my_car) # <__main__.Car object at 0x000002619DB26A50>
+#ahh, so there is a nice way to print everything:
+print(my_car.__dict__)
+
+#but notice how this deosn't contain "new"
+print(Car.__dict__)
+
+# this contains much more info!
+
+print("Testing printing the items one by one...")
+for item in my_car.__dict__:
+    print(item) # Dictionary key name
+    print(my_car.__dict__[item]) # accessing the value at that point in the dictionary
+
+# ERROR "You should get the model of my_car by calling my_car.model."
+# I've literally cracked the code, how are you not entertained
+    
+
+# I'm just going to add a function to see if it appears in dict
