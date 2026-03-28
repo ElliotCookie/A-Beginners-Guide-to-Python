@@ -8,6 +8,10 @@ class Car(): # don't forget (object) in py 2
 
     def return_beans():
         return "beans" 
+    
+    def display_car(self):
+        print(f"This is a {self.colour} {self.model} with {str(self.mpg)} MPG.")
+        
 
 my_car = Car("DeLorean", "silver", 88)
 
@@ -50,3 +54,20 @@ for item in my_car.__dict__:
     
 
 # I'm just going to add a function to see if it appears in dict
+# the verdict was that it doesn't
+
+
+
+
+# 7 / 11 - Creating class methods
+# telling us again that as well as variables, classes can have methods too 
+# a function offers global utility
+# a method is a behaviour of an object
+# a method is just a function that knows what object it belongs to
+
+
+print("adding a display class method...")
+my_car.display_car()
+# got it right first time, which is worrying... 
+# but I used an f-string and not the %s method, so my solution will be rejected
+# print "This is a %s %s with %s MPG." % (self.color, self.model, str(self.mpg))
