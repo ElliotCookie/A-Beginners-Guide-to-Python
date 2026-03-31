@@ -116,6 +116,10 @@ class ElectricCar(Car):
     def __init__(self, model, colour, mpg, battery_type):
         super().__init__(model, colour, mpg)
         self.battery_type = battery_type
+
+
+    def drive_car():
+        condition = "like new"    
         
 my_car = ElectricCar("Prius","black", 80,"molten salt")       
 
@@ -184,3 +188,8 @@ for car in new_cars:
     print(car.__class__.__name__)
     for item in car.__dict__:
         print(f"{item}: {car.__dict__[item]}")
+
+
+
+# 10 / 11 - Overriding methods (I'm convinced we have done this before)       
+# add a drive_car method to the class
