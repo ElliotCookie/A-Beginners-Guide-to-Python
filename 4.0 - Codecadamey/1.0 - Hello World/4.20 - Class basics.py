@@ -118,7 +118,7 @@ class ElectricCar(Car):
         self.battery_type = battery_type
 
 
-    def drive_car():
+    def drive_car(condition):
         condition = "like new"    
         
 my_car = ElectricCar("Prius","black", 80,"molten salt")       
@@ -193,3 +193,8 @@ for car in new_cars:
 
 # 10 / 11 - Overriding methods (I'm convinced we have done this before)       
 # add a drive_car method to the class
+
+print("Printing the new condition of the my_car electric car...")
+print(my_car.condition)
+my_car.drive_car
+print(my_car.condition)
