@@ -118,10 +118,12 @@ class ElectricCar(Car):
         self.battery_type = battery_type
 
 
-    def drive_car(condition):
-        condition = "like new"    
+    def drive_car(self): # using self and not 'condition'
+        self.condition = "like new"    
         
-my_car = ElectricCar("Prius","black", 80,"molten salt")       
+my_car2 = ElectricCar("Prius","black", 80,"molten salt")      
+print("Printing condition before any changes") 
+print(my_car2.condition)
 
 for item in my_car.__dict__:
     print(f"{item}: {my_car.__dict__[item]}")
@@ -161,11 +163,11 @@ print(dir(my_car))
 '__sizeof__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__',
  'condition', 'display_car', 'drive_car', 'return_beans'] """
 
-for item in dir(my_car):
+for item in dir(my_car2):
     print()
     #print(item)
     # print(ParseUpNone.item) - this will error as no attribute ".item"
-    hidden_thing = getattr(my_car, item)
+    hidden_thing = getattr(my_car2, item)
     print(hidden_thing)
 
 
@@ -195,8 +197,33 @@ for car in new_cars:
 # add a drive_car method to the class
 
 print("Printing the new condition of the my_car electric car...")
-print(my_car.condition)
-my_car.drive_car
-print(my_car.condition)
+print(my_car2.condition)
+my_car.drive_car #this is just a reference, not a call!
+my_car2.drive_car()
+print(my_car2.condition)
 
-#late for a train but have had a good look!
+
+# obviously it didn't much care for my solution but hey ho
+
+
+
+# 11 / 11 - Building useful classes
+# repr method, is short for representation, provigin a return value lets us tell python how to represent an object of our class
+for i in range(2): print()
+print("using the represent in-built function...")
+
+class Point3d(object):
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def __repr__(self):
+        return "(%d, %d, %d)" % (self.x, self.y, self.z) # weird formatting with the " there, basically making a thruple
+    
+my_point = Point3d(1, 2, 3)
+print(my_point)
+print()
+
+# rejected my solution, despite being exactly the same
+
