@@ -49,3 +49,85 @@ my_new_file = open("output.txt", "r")
 print(my_new_file.read()) # the .read() goes outside the object, not read(object)
 # DON'T FORGET TO CLOSE
 my_new_file.close()
+
+
+
+# 5 / 9 - Reading between the lines
+# Feel like we are in for a surprise here!
+# Oh wait, it's just a readline thing
+
+my_file3 = open("output.txt", "r") #this asked for "text.txt" but we haven't done that in the lesson yet
+print(my_file3.readline()) #it actually adds a space after each line
+print(my_file3.readline())
+print(my_file3.readline())
+my_file3.close()
+
+# trying something extra
+print("extra stuff")
+my_file4 = open("output.txt", "r")
+test_list = my_file4.read()
+#for item in test_list[0,3]:
+#  print(item)
+my_file4.close()
+
+# I've got an error but I think I need to close it properly
+
+# okay, we've stored the var so lets close it immediately
+# also, lets store it in a list rather than a str
+
+my_file5 = open("output.txt", "r")
+test_list = [my_file5.read()]
+my_file5.close()
+
+""" for item in test_list[0,3]:
+  print(item) """
+
+# more errors, lets print the whole list and see what happens
+
+print(test_list) #['1\n4\n9\n16\n25\n36\n49\n64\n81\n100\n']
+
+# we need a function that basically looks at a list but filters out certain selected chars
+# the other issue is that this is a list of len 0, basically a str
+
+my_file5 = open("output.txt", "r")
+test_list = [my_file5.read()]
+my_file5.close()
+
+for item in test_list[0:3]: #this was the syntax error, : not ,
+  print(item) # this prints everything, because it's a list of len 0
+
+
+# updates
+
+my_file6 = open("output.txt", "r")
+test_str = my_file6.read() # removed [] because irrelevant
+my_file6.close()
+
+test_list = test_str.split("\n") # this was the missing function
+print(test_list) # ['1', '4', '9', '16', '25', '36', '49', '64', '81', '100', '']
+for item in test_list[0:3]:
+  print(item) 
+
+print("Think we are finally there....")
+my_file7 = open("output.txt", "r")
+test_str = my_file7.read() # removed [] because irrelevant
+my_file7.close()
+
+test_list = test_str.strip().split("\n") # added in .strip() to remove ''
+print(test_list) # ['1', '4', '9', '16', '25', '36', '49', '64', '81', '100']
+for item in test_list[0:3]:
+  # change the seperator example
+  print(item, end=" ")
+print()
+print("Change seperator finished")
+
+# print all at once
+print(*test_list[0:3])
+print("Print all at once finished")
+
+# join into a string, controlled
+print(" ".join(test_list[0:3])) # bracket placement here very important
+print("Join into a string finished")
+
+
+# I think we need to unpack how all of these work tbh, readline is cool though!
