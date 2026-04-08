@@ -131,3 +131,5 @@ print("Join into a string finished")
 
 
 # I think we need to unpack how all of these work tbh, readline is cool though!
+# I've been doing css, so that sort of counts as progress but not here 
+
