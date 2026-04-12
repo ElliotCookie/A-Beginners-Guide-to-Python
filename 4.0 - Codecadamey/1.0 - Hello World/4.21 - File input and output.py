@@ -131,7 +131,47 @@ print("Join into a string finished")
 
 
 # I think we need to unpack how all of these work tbh, readline is cool though!
-# I've been doing css, so that sort of counts as progress but not here 
-# Again in the morning, even using inspector on chrome!
 
 
+
+
+
+# 6 / 9 - Buffering data
+# If you write to a file without closing it, the data never gets there!
+
+
+
+# Use a file handler to open a file for writing
+write_file = open("text.txt", "w")
+
+# Open the file for reading
+read_file = open("text.txt", "r")
+
+# Write to the file
+write_file.write("Not closing files is VERY BAD.")
+
+write_file.close()
+
+# Try to read from the file
+print (read_file.read())
+read_file.close()
+
+
+
+
+# 7 / 9 - with and as keywords
+# there is an exit method that automatically closes our files
+# to get there, we use the keywords
+print("new keywords...")
+with open("text.txt", "w") as textfile:
+  textfile.write("Success!")
+
+
+# 8 / 9 - trying it ourselves
+
+string_to_write = str(input("put in the string please: "))
+print(string_to_write)
+with open("text.txt", "w") as file_to_write:
+  file_to_write.write(string_to_write)
+
+# obviously it didn't like this answer
