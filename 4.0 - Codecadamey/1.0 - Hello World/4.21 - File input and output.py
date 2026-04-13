@@ -175,3 +175,28 @@ with open("text.txt", "w") as file_to_write:
   file_to_write.write(string_to_write)
 
 # obviously it didn't like this answer
+
+
+
+
+# 9 / 9 - Case closed (?)
+# there is a way to test. Python files have a boolean closed attribute
+
+string_to_write = str(input("put in the string please"))
+print(string_to_write)
+with open("text.txt", "w") as my_file:
+  my_file.write(string_to_write)
+
+if my_file.closed != True:
+  my_file.close()
+
+print(my_file.closed)
+
+# Their python is a bit better, and it's a shame as I've done this in the past
+if not my_file.closed:
+  pass
+
+# I guess mine is a little more readable though
+
+
+# COURSE FINISHED?!
