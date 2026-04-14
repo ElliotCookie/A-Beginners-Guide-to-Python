@@ -200,3 +200,4 @@ if not my_file.closed:
 
 
 # COURSE FINISHED?!
+#  wait, we now need to find a new one!
