@@ -9,6 +9,8 @@ of a module and its functions and/or classes.
 
 
 #TODO: define your EXPECTED_BAKE_TIME (required) and PREPARATION_TIME (optional) constants below.
+EXPECTED_BAKE_TIME = 60
+PREPARATION_TIME = 30
 
 
 #TODO: Remove 'pass' and complete the 'bake_time_remaining()' function below.
@@ -23,7 +25,10 @@ def bake_time_remaining():
     based on the `EXPECTED_BAKE_TIME`.
     """
 
-    pass
+
+    REMAINING_BAKE_TIME = EXPECTED_BAKE_TIME - elapsed_time_in_minutes
+    return REMAINING_BAKE_TIME
+    
 
 
 #TODO: Define the 'preparation_time_in_minutes()' function below.
@@ -32,15 +37,13 @@ def bake_time_remaining():
 # This will make it easier to do calculations, and make changes to your code.
 
 
-
 #TODO: define the 'elapsed_time_in_minutes()' function below.
-
+def elapsed_time_in_minutes():
+    pass
 
 
 # TODO: Remember to go back and add docstrings to all your functions
 #  (you can copy and then alter the one from bake_time_remaining.)
-
-
 
 
 
