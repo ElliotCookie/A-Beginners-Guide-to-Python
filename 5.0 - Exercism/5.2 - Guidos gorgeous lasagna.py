@@ -97,13 +97,18 @@ def bake_time_remaining(time_in_oven):
 # You can do that on the line below the 'EXPECTED_BAKE_TIME' constant.
 # This will make it easier to do calculations, and make changes to your code.
 def preparation_time_in_minutes(number_of_layers):
-    return number_of_layers * 2
+    """Calculate preparation time based on number of layers."""
+    PREPARATION_TIME = 2
+    return number_of_layers * PREPARATION_TIME
 
 
 
 #TODO: define the 'elapsed_time_in_minutes()' function below.
 def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
+    """Calculate total elapsed cooking time."""
     time_in_kitchen = preparation_time_in_minutes(number_of_layers) + elapsed_bake_time
+    # A hashtag to see if this makes it
+    """Another block comment"""
     return time_in_kitchen
 
 # TODO: Remember to go back and add docstrings to all your functions
@@ -113,5 +118,9 @@ def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
 print(elapsed_time_in_minutes(1,3))
 print(elapsed_time_in_minutes(15,20))
 
+help(preparation_time_in_minutes)
+
+preparation_time_in_minutes.__doc__ = "This is a new docstring"
+help(preparation_time_in_minutes)
 
 print(bake_time_remaining(23))
