@@ -67,6 +67,21 @@ bool_four = 5!=5
 bool_five =  3 < 5
 
 
+# 9 / 15 - This and that
+
+bool_one = False
+print(bool_one)
+
+bool_two = True
+
+bool_three = True
+
+bool_four = True
+
+bool_five = False
+
+
+
 """ Boolean operators compare statements and result in boolean values. There are three boolean operators:
 
 and, which checks if both the statements are True;
