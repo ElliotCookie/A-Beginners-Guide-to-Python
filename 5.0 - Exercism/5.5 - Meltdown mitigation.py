@@ -43,6 +43,8 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
 
     generated_power = voltage * current
     power_output = (generated_power/theoretical_max_power)/100
+    #this still needs work
+
     
 
 
