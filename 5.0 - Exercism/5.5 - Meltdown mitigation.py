@@ -17,7 +17,7 @@ def is_criticality_balanced(temperature, neutrons_emitted):
     return (
         temperature < 800 and
         neutrons_emitted > 500 and
-        temperature * neutrons_emitted < 50000)
+        temperature * neutrons_emitted < 500000)
     
 
 
@@ -42,10 +42,17 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
     """
 
     generated_power = voltage * current
-    power_output = (generated_power/theoretical_max_power)/100
-    #this still needs work
+    power_output = (generated_power/theoretical_max_power)*100 # as we are using decimals below
+    if power_output >= 80:
+        return 'green'
+    elif 80 > power_output >= 60:
+        return 'orange'
+    elif 60 > power_output >= 30:
+        return 'red'
+    elif power_output < 30:
+        return 'black'
 
-    
+print(reactor_efficiency(10, 300, 10000))    
 
 
 def fail_safe(temperature, neutrons_produced_per_second, threshold):
@@ -61,4 +68,45 @@ def fail_safe(temperature, neutrons_produced_per_second, threshold):
     3. 'DANGER' -> `temperature * neutrons per second` is not in the above-stated ranges
     """
 
-    pass
+    stability_measure = temperature * neutrons_produced_per_second
+    if stability_measure < threshold * 0.9:
+        return 'LOW'
+    elif threshold * 0.9 <= stability_measure <= threshold * 1.1:
+        return 'NORMAL'
+    else:
+        return 'DANGER'
+
+
+# based on some feedback, here are some upgrades:
+
+def reactor_efficiency(voltage, current, theoretical_max_power):
+    """Assess reactor efficiency zone.
+
+    :param voltage: int or float - voltage value.
+    :param current: int or float - current value.
+    :param theoretical_max_power: int or float - power that corresponds to a 100% efficiency.
+    :return: str - one of ('green', 'orange', 'red', or 'black').
+
+    Efficiency can be grouped into 4 bands:
+
+    1. green -> efficiency of 80% or more,
+    2. orange -> efficiency of less than 80% but at least 60%,
+    3. red -> efficiency below 60%, but still 30% or more,
+    4. black ->  less than 30% efficient.
+
+    The percentage value is calculated as
+    (generated power/ theoretical max power)*100
+    where generated power = voltage * current
+    """
+
+    generated_power = voltage * current
+    power_output = (generated_power/theoretical_max_power)*100 # as we are using decimals below
+    if power_output >= 80:
+        return 'green'
+    if 80 > power_output >= 60: # removing the 'el' means it doesn't run after a return
+        return 'orange'
+    if power_output >= 30: # removed an unecessary ">60", as the clause above effectively catches this
+        return 'red'
+    return 'black' # essentially <30%
+
+print(reactor_efficiency(10, 300, 10000))    
