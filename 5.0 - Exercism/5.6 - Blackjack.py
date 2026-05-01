@@ -40,8 +40,13 @@ def higher_card(card_one, card_two):
     2.  'A' (ace card) = 1
     3.  '2' - '10' = numerical value.
     """
-
-    pass
+    if value_of_card(card_one) > value_of_card(card_two):
+        return card_one
+    if value_of_card(card_one) < value_of_card(card_two):
+        return card_two
+    if value_of_card(card_one) == value_of_card(card_two):
+        return card_one, card_two
+    
 
 
 def value_of_ace(card_one, card_two):
@@ -54,8 +59,20 @@ def value_of_ace(card_one, card_two):
     2.  'A' (ace card) = 11 (if already in hand)
     3.  '2' - '10' = numerical value.
     """
+    hand_sum = value_of_card(card_one) + value_of_card(card_two)
+    if hand_sum <= 20:
+        calculated_ace_value = 1
+    if hand_sum <= 10:
+        calculated_ace_value = 11
 
-    pass
+    
+    return calculated_ace_value
+
+print(value_of_ace('K', 'K'))
+print(value_of_ace('2', '3'))
+
+
+
 
 
 def is_blackjack(card_one, card_two):
