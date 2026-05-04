@@ -47,7 +47,7 @@ def higher_card(card_one, card_two):
     if value_of_card(card_one) == value_of_card(card_two):
         return card_one, card_two
     
-
+# busy summer, still here though
 
 def value_of_ace(card_one, card_two):
     """Calculate the most advantageous value for an upcoming ace card.
