@@ -60,6 +60,9 @@ def value_of_ace(card_one, card_two):
     2.  'A' (ace card) = 11 (if already in hand)
     3.  '2' - '10' = numerical value.
     """
+    if card_one == 'A' or card_two == 'A': # already have an ace and want it's value as 1. Not sure I agree?
+        return 1
+
     hand_sum = value_of_card(card_one) + value_of_card(card_two)
     if hand_sum <= 20:
         calculated_ace_value = 1
@@ -69,11 +72,22 @@ def value_of_ace(card_one, card_two):
     
     return calculated_ace_value
 
+print("Value of aces")
 print(value_of_ace('K', 'K'))
 print(value_of_ace('2', '3'))
+print(value_of_ace('2', 'A'))
 
 
+def value_of_ace(card_one, card_two):
 
+    if 'A' in [card_one, card_two]:
+        return 1
+
+    hand_sum = value_of_card(card_one) + value_of_card(card_two)
+    if hand_sum <= 10:
+        return 11 # if the hand can stomach 11 more points, return 11
+
+    return 1 # elif the hand can't stomach 11 points then we just give it 1 point
 
 
 def is_blackjack(card_one, card_two):
