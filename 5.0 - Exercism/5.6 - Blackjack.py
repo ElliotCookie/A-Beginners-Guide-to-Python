@@ -101,7 +101,14 @@ def is_blackjack(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-    pass
+    if card_one == 'A' or card_two == 'A':
+        if value_of_card(card_one) == 10 or value_of_card(card_two) == 10:
+            # therefore, Blackjack!
+            return True
+    
+    return False
+
+    # not the most pythonic but it is nearly readable natural language
 
 
 def can_split_pairs(card_one, card_two):
