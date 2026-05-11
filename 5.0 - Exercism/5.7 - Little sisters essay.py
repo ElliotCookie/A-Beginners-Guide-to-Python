@@ -9,10 +9,14 @@ def capitalize_title(title):
     """
 
 
-    for char in len.title:
-        if title[char] == " ":
-            title[char -1] = char.upper
-
+    for char in range(0, len(title) - 1):
+        new_char = title[char]
+        if new_char == " ":
+            char_in_question = title[char + 1] 
+            char_in_question = char_in_question.upper()
+            title = title[:char] + char_in_question + title[char:]
+            new_title = title
+    return title
 
 print(capitalize_title("green giant"))
 print(capitalize_title("new Test"))
