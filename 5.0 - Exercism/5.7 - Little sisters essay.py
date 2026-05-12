@@ -25,6 +25,8 @@ print(capitalize_title("ending in a space "))
 print(capitalize_title(" starting with a space"))
 print(capitalize_title("number test 1five"))
 
+# progress, in a form
+# late to work though!
 
 
 def check_sentence_ending(sentence):
