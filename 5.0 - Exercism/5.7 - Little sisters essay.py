@@ -7,9 +7,25 @@ def capitalize_title(title):
     :param title: str - title string that needs title casing.
     :return: str - title string in title case (first letters capitalized).
     """
+    counter = 0
+    while counter < len(title):
+        first_letter = title[counter]    
+        if first_letter != " ":  
+            first_letter = first_letter.upper()
+            title = first_letter + title[1:]
+            counter += len(title)
+        elif first_letter == " ":  
+            for chars in range(1, len(title)-1):
+                scan = title[chars]
+                if scan != " ":
+                    first_letter = title[chars]   
+                    first_letter = first_letter.upper()
+                    title = title[:chars] + first_letter + title[chars:]
+        counter += 1
 
+# getting closer!
 
-    for char in range(0, len(title) - 1):
+    for char in range(1, len(title) - 1):
         new_char = title[char]
         if new_char == " ":
             char_in_question = title[char + 1] 
