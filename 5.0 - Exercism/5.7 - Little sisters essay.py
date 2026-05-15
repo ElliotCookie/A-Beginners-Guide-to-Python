@@ -14,18 +14,19 @@ def capitalize_title(title):
             first_letter = first_letter.upper()
             title = first_letter + title[1:]
             counter += len(title)
-        elif first_letter == " ":  
-            for chars in range(0, len(title)-1):
-                scan = title[chars]
-                if scan != " ":
-                    first_letter = title[chars]   
-                    first_letter = first_letter.upper()
-                    title = title[:chars] + first_letter + title[chars:]
+        elif first_letter == " ":
+            blank_spaces = 0  
+            while title[blank_spaces] == " ":
+                blank_spaces += 1 
+            first_letter = title[blank_spaces]
+            first_letter = first_letter.upper()
+            title = title[:blank_spaces] + first_letter + title[blank_spaces+1:]
+            counter += len(title)
+
         counter += 1
     
     return title
 
-# getting closer!
 
 print(capitalize_title("green giant"))
 print(capitalize_title("new Test"))
@@ -33,6 +34,14 @@ print(capitalize_title("three words now"))
 print(capitalize_title("ending in a space "))
 print(capitalize_title(" starting with a space"))
 print(capitalize_title("number test 1five"))
+
+"""             for chars in range(0, len(title)-1):
+                scan = title[chars]
+                if scan != " ":
+                    first_letter = title[chars]   
+                    first_letter = first_letter.upper()
+                    title = title[:chars] + first_letter + title[chars:] """
+
 
 
 """     for char in range(1, len(title) - 1):
