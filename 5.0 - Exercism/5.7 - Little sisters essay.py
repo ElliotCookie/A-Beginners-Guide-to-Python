@@ -25,6 +25,11 @@ def capitalize_title(title):
 
         counter += 1
     
+
+    #looks like I just need to conver the above to any time there is a space in the string
+    #I wonder if the number will send an error, as you can't .upper() it
+    
+
     return title
 
 
