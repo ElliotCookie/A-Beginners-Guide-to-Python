@@ -7,28 +7,15 @@ def capitalize_title(title):
     :param title: str - title string that needs title casing.
     :return: str - title string in title case (first letters capitalized).
     """
+
     counter = 0
     while counter < len(title):
-        first_letter = title[counter]    
-        if first_letter != " ":  
-            first_letter = first_letter.upper()
-            title = first_letter + title[1:]
-            counter += len(title)
-        elif first_letter == " ":
-            blank_spaces = 0  
-            while title[blank_spaces] == " ":
-                blank_spaces += 1 
-            first_letter = title[blank_spaces]
-            first_letter = first_letter.upper()
-            title = title[:blank_spaces] + first_letter + title[blank_spaces+1:]
-            counter += len(title)
+        char_in_question = title[counter]
+        if (counter == 0) or (title[counter - 1] == " " and char_in_question != " "):
+            char_in_question = char_in_question.upper()
+            title = title[:counter] + char_in_question + title[counter+1:] # could use a list and not rebuild strings
+        counter +=1
 
-        counter += 1
-    
-
-    #looks like I just need to conver the above to any time there is a space in the string
-    #I wonder if the number will send an error, as you can't .upper() it
-    
 
     return title
 
@@ -59,6 +46,26 @@ print(capitalize_title("number test 1five"))
     return title """
 
 
+"""     counter = 0
+    while counter < len(title):
+        first_letter = title[counter]    
+        if first_letter != " ":  
+            first_letter = first_letter.upper()
+            title = first_letter + title[1:]
+            counter += len(title)
+        elif first_letter == " ":
+            blank_spaces = 0  
+            while title[blank_spaces] == " ":
+                blank_spaces += 1 
+            first_letter = title[blank_spaces]
+            first_letter = first_letter.upper()
+            title = title[:blank_spaces] + first_letter + title[blank_spaces+1:]
+            counter += len(title)
+
+        counter += 1 """
+    
+
+
 # progress, in a form
 # late to work though!
 
@@ -69,9 +76,12 @@ def check_sentence_ending(sentence):
     :param sentence: str - a sentence to check.
     :return: bool - return True if punctuated correctly with period, False otherwise.
     """
+    if sentence[len(sentence)-1] == ".": return True
+    else: return False
 
-    pass
-
+    
+print(check_sentence_ending("I am a frog"))
+print(check_sentence_ending("Frogs are friends."))
 
 def clean_up_spacing(sentence):
     """Verify that there isn't any whitespace at the start and end of the sentence.
