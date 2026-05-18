@@ -9,14 +9,12 @@ def capitalize_title(title):
     """
 
     counter = 0
-    while counter < len(title):
+    for counter in range(0, len(title)):
         char_in_question = title[counter]
         if (counter == 0) or (title[counter - 1] == " " and char_in_question != " "):
             char_in_question = char_in_question.upper()
             title = title[:counter] + char_in_question + title[counter+1:] # could use a list and not rebuild strings
-        counter +=1
-
-
+ 
     return title
 
 
@@ -89,9 +87,26 @@ def clean_up_spacing(sentence):
     :param sentence: str - a sentence to clean of leading and trailing space characters.
     :return: str - a sentence that has been cleaned of leading and trailing space characters.
     """
+    for char in range(0, len(sentence)):
+        char_in_question = sentence[char]
+        if char_in_question == " ": # armed, found blank space at START
+            sentence = sentence[char+1:] # move the start of the sentance one digit over
+        if char_in_question != " ": # found our first char, so exit
+            break
+    
+    # lets go backwards
+    for char in range(len(sentence) -1 , -1, -1):   
+        char_in_question = sentence[char]
+        if char_in_question == " ": # armed, found blank space at END
+            sentence = sentence[:char-1] # move end of sentance inwards
+        if char_in_question != " ": # found our last char, so exit
+            break
+    
+    return sentence
 
-    pass
-
+print(clean_up_spacing("no spaces here"))
+print(clean_up_spacing(" one space here "))
+print(clean_up_spacing("   three and four here space here    "))
 
 def replace_word_choice(sentence, old_word, new_word):
     """Replace a word in the provided sentence with a new one.
