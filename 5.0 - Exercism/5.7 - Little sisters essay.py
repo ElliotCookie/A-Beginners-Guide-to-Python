@@ -87,10 +87,30 @@ def clean_up_spacing(sentence):
     :param sentence: str - a sentence to clean of leading and trailing space characters.
     :return: str - a sentence that has been cleaned of leading and trailing space characters.
     """
+
+    while len(sentence) > 0 and sentence[0] == " ":
+        print("FRONT space removed")
+        sentence = sentence[1:]
+
+    while len(sentence) > 0 and sentence[-1] == " ":
+        print("REAR space deleted")
+        sentence = sentence[:-1]
+
+    return sentence
+
+
+print(clean_up_spacing("no spaces here"))
+print(clean_up_spacing(" one space here "))
+print(clean_up_spacing("   three and four here space here    "))
+
+
+"""
+AS WE ARE MUTATING THE LENGTH OF THE ITERABLE, A WHILE LOOP IS MORE FAVOURABLE 
     for char in range(0, len(sentence)):
         char_in_question = sentence[char]
         if char_in_question == " ": # armed, found blank space at START
             sentence = sentence[char+1:] # move the start of the sentance one digit over
+            print("FRONT SPACE REMOVED")
         if char_in_question != " ": # found our first char, so exit
             break
     
@@ -98,15 +118,12 @@ def clean_up_spacing(sentence):
     for char in range(len(sentence) -1 , -1, -1):   
         char_in_question = sentence[char]
         if char_in_question == " ": # armed, found blank space at END
-            sentence = sentence[:char-1] # move end of sentance inwards
+            sentence = sentence[:char] # move end of sentance inwards
+            print("END SPACE REMOVED")
         if char_in_question != " ": # found our last char, so exit
-            break
-    
-    return sentence
+            break """
 
-print(clean_up_spacing("no spaces here"))
-print(clean_up_spacing(" one space here "))
-print(clean_up_spacing("   three and four here space here    "))
+
 
 def replace_word_choice(sentence, old_word, new_word):
     """Replace a word in the provided sentence with a new one.
